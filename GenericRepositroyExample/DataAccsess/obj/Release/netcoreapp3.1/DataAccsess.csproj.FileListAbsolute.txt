@@ -1,9 +1,0 @@
-C:\Users\ts\source\repos\GenericRepositroyExample\DataAccsess\bin\Release\netcoreapp3.1\DataAccsess.deps.json
-C:\Users\ts\source\repos\GenericRepositroyExample\DataAccsess\bin\Release\netcoreapp3.1\DataAccsess.dll
-C:\Users\ts\source\repos\GenericRepositroyExample\DataAccsess\bin\Release\netcoreapp3.1\DataAccsess.pdb
-C:\Users\ts\source\repos\GenericRepositroyExample\DataAccsess\obj\Release\netcoreapp3.1\DataAccsess.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\ts\source\repos\GenericRepositroyExample\DataAccsess\obj\Release\netcoreapp3.1\DataAccsess.AssemblyInfoInputs.cache
-C:\Users\ts\source\repos\GenericRepositroyExample\DataAccsess\obj\Release\netcoreapp3.1\DataAccsess.AssemblyInfo.cs
-C:\Users\ts\source\repos\GenericRepositroyExample\DataAccsess\obj\Release\netcoreapp3.1\DataAccsess.csproj.CoreCompileInputs.cache
-C:\Users\ts\source\repos\GenericRepositroyExample\DataAccsess\obj\Release\netcoreapp3.1\DataAccsess.dll
-C:\Users\ts\source\repos\GenericRepositroyExample\DataAccsess\obj\Release\netcoreapp3.1\DataAccsess.pdb
