@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.1",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "GenericRepositoryExample.Business/1.0.0": {
+        "dependencies": {
+          "GenericRepositoryExampla.Entities": "1.0.0"
+        },
+        "runtime": {
+          "GenericRepositoryExample.Business.dll": {}
+        }
+      },
+      "GenericRepositoryExampla.Entities/1.0.0": {
+        "runtime": {
+          "GenericRepositoryExampla.Entities.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "GenericRepositoryExample.Business/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "GenericRepositoryExampla.Entities/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

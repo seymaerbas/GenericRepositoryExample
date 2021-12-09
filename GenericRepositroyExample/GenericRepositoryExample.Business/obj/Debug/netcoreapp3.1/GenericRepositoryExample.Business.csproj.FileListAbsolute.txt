@@ -1,0 +1,13 @@
+C:\Users\ts\source\repos\GenericRepositroyExample\GenericRepositoryExample.Business\bin\Debug\netcoreapp3.1\GenericRepositoryExample.Business.deps.json
+C:\Users\ts\source\repos\GenericRepositroyExample\GenericRepositoryExample.Business\bin\Debug\netcoreapp3.1\GenericRepositoryExample.Business.dll
+C:\Users\ts\source\repos\GenericRepositroyExample\GenericRepositoryExample.Business\bin\Debug\netcoreapp3.1\GenericRepositoryExample.Business.pdb
+C:\Users\ts\source\repos\GenericRepositroyExample\GenericRepositoryExample.Business\bin\Debug\netcoreapp3.1\GenericRepositoryExampla.Entities.dll
+C:\Users\ts\source\repos\GenericRepositroyExample\GenericRepositoryExample.Business\bin\Debug\netcoreapp3.1\GenericRepositoryExampla.Entities.pdb
+C:\Users\ts\source\repos\GenericRepositroyExample\GenericRepositoryExample.Business\obj\Debug\netcoreapp3.1\GenericRepositoryExample.Business.csproj.AssemblyReference.cache
+C:\Users\ts\source\repos\GenericRepositroyExample\GenericRepositoryExample.Business\obj\Debug\netcoreapp3.1\GenericRepositoryExample.Business.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ts\source\repos\GenericRepositroyExample\GenericRepositoryExample.Business\obj\Debug\netcoreapp3.1\GenericRepositoryExample.Business.AssemblyInfoInputs.cache
+C:\Users\ts\source\repos\GenericRepositroyExample\GenericRepositoryExample.Business\obj\Debug\netcoreapp3.1\GenericRepositoryExample.Business.AssemblyInfo.cs
+C:\Users\ts\source\repos\GenericRepositroyExample\GenericRepositoryExample.Business\obj\Debug\netcoreapp3.1\GenericRepositoryExample.Business.csproj.CoreCompileInputs.cache
+C:\Users\ts\source\repos\GenericRepositroyExample\GenericRepositoryExample.Business\obj\Debug\netcoreapp3.1\GenericRepositoryExample.Business.dll
+C:\Users\ts\source\repos\GenericRepositroyExample\GenericRepositoryExample.Business\obj\Debug\netcoreapp3.1\GenericRepositoryExample.Business.pdb
+C:\Users\ts\source\repos\GenericRepositroyExample\GenericRepositoryExample.Business\obj\Debug\netcoreapp3.1\GenericRepositoryExample.Business.csproj.CopyComplete

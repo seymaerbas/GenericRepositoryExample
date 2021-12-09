@@ -1,0 +1,64 @@
+﻿@page
+@model GenericRepositoryExampla.Api.Pages.CategoryAdd1Model
+@{
+    ViewData["Title"] = "Title";
+    Layout = "~/Pages/Shared/_LayoutSite1.cshtml";
+}
+
+<!-- Main content -->
+<section class="content">
+
+    <div class="card">
+
+        <h4 class="card-title">Add Category</h4>
+    </div>
+
+    <div class="card-body">
+
+        <div class="card mb-4">
+
+            <div class="card-body">
+                <form role="form" action="" method="post">
+
+                    <div class="form-group">
+                        <label>Parent</label>
+
+                        <select class="select2-single form-control" name="parent_id" id="select2Single">
+                            <option value="0" selected="selected">Main Category</option>
+
+
+
+                            <option value=""></option>
+
+
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Title</label>
+                        <input type="text" name="title" class="form-control">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Description</label>
+                        <input type="text" name="description" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label>Status</label>
+                        <select class="select2-single form-control" name="status" id="select2Single">
+                            <option selected="selected">False</option>
+                            <option>True</option>
+
+                        </select>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Add Category</button>
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+</section><!-- /.content -->
