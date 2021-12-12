@@ -13,7 +13,7 @@ namespace GenericRepositoryExample.DataAccsess.Repositories
         public UserRepository(GenericDbContext context):base(context){}
         public async Task<IEnumerable<User>> GetAllWithProfileAsync()
         {
-            return (IEnumerable<User>)await GenericDbContext.Users.Include(a=>a.Profiles).SingleOrDefaultAsync();
+            return (IEnumerable<User>)await GenericDbContext.User.Include(a=>a.Profiles).SingleOrDefaultAsync();
         }
         private GenericDbContext GenericDbContext
         {

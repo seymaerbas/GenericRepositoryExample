@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "M0UUoqtOWZfKy3B2oRBEY/Z2XNqL2CYctDoaa0ZVttStvYOM7EEeL5cv69nnEcwPsXcjLrSnesROMxvt5KGxLg==",
+  "dgSpecHash": "oWQxcks5xcL9J+TdWif8Nc6v8IP22lhx8+uHDLxlDaVjyk4KfdlVNcDRdiRufj4/909ZDxVnFJsEUBYNQL249w==",
   "success": true,
   "projectFilePath": "C:\\Users\\ts\\source\\repos\\GenericRepositroyExample\\GenericRepositoryExampla.Api\\GenericRepositoryExampla.Api.csproj",
   "expectedPackageFiles": [
@@ -61,6 +61,7 @@
     "C:\\Users\\ts\\.nuget\\packages\\microsoft.entityframeworkcore.relational\\3.1.3\\microsoft.entityframeworkcore.relational.3.1.3.nupkg.sha512",
     "C:\\Users\\ts\\.nuget\\packages\\microsoft.entityframeworkcore.sqlserver\\3.1.3\\microsoft.entityframeworkcore.sqlserver.3.1.3.nupkg.sha512",
     "C:\\Users\\ts\\.nuget\\packages\\microsoft.entityframeworkcore.tools\\3.1.3\\microsoft.entityframeworkcore.tools.3.1.3.nupkg.sha512",
+    "C:\\Users\\ts\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
     "C:\\Users\\ts\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\3.1.21\\microsoft.extensions.caching.abstractions.3.1.21.nupkg.sha512",
     "C:\\Users\\ts\\.nuget\\packages\\microsoft.extensions.caching.memory\\3.1.3\\microsoft.extensions.caching.memory.3.1.3.nupkg.sha512",
     "C:\\Users\\ts\\.nuget\\packages\\microsoft.extensions.configuration\\3.1.21\\microsoft.extensions.configuration.3.1.21.nupkg.sha512",
@@ -110,8 +111,17 @@
     "C:\\Users\\ts\\.nuget\\packages\\microsoft.visualstudio.web.codegenerators.mvc\\3.1.5\\microsoft.visualstudio.web.codegenerators.mvc.3.1.5.nupkg.sha512",
     "C:\\Users\\ts\\.nuget\\packages\\microsoft.win32.primitives\\4.3.0\\microsoft.win32.primitives.4.3.0.nupkg.sha512",
     "C:\\Users\\ts\\.nuget\\packages\\microsoft.win32.registry\\4.5.0\\microsoft.win32.registry.4.5.0.nupkg.sha512",
+    "C:\\Users\\ts\\.nuget\\packages\\namotion.reflection\\2.0.8\\namotion.reflection.2.0.8.nupkg.sha512",
     "C:\\Users\\ts\\.nuget\\packages\\netstandard.library\\1.6.1\\netstandard.library.1.6.1.nupkg.sha512",
     "C:\\Users\\ts\\.nuget\\packages\\newtonsoft.json\\12.0.2\\newtonsoft.json.12.0.2.nupkg.sha512",
+    "C:\\Users\\ts\\.nuget\\packages\\njsonschema\\10.6.3\\njsonschema.10.6.3.nupkg.sha512",
+    "C:\\Users\\ts\\.nuget\\packages\\njsonschema.yaml\\10.6.3\\njsonschema.yaml.10.6.3.nupkg.sha512",
+    "C:\\Users\\ts\\.nuget\\packages\\nswag.annotations\\13.15.1\\nswag.annotations.13.15.1.nupkg.sha512",
+    "C:\\Users\\ts\\.nuget\\packages\\nswag.aspnetcore\\13.15.1\\nswag.aspnetcore.13.15.1.nupkg.sha512",
+    "C:\\Users\\ts\\.nuget\\packages\\nswag.core\\13.15.1\\nswag.core.13.15.1.nupkg.sha512",
+    "C:\\Users\\ts\\.nuget\\packages\\nswag.core.yaml\\13.15.1\\nswag.core.yaml.13.15.1.nupkg.sha512",
+    "C:\\Users\\ts\\.nuget\\packages\\nswag.generation\\13.15.1\\nswag.generation.13.15.1.nupkg.sha512",
+    "C:\\Users\\ts\\.nuget\\packages\\nswag.generation.aspnetcore\\13.15.1\\nswag.generation.aspnetcore.13.15.1.nupkg.sha512",
     "C:\\Users\\ts\\.nuget\\packages\\nuget.frameworks\\4.7.0\\nuget.frameworks.4.7.0.nupkg.sha512",
     "C:\\Users\\ts\\.nuget\\packages\\runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
     "C:\\Users\\ts\\.nuget\\packages\\runtime.fedora.23-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.fedora.23-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
@@ -222,7 +232,8 @@
     "C:\\Users\\ts\\.nuget\\packages\\system.xml.readerwriter\\4.3.0\\system.xml.readerwriter.4.3.0.nupkg.sha512",
     "C:\\Users\\ts\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512",
     "C:\\Users\\ts\\.nuget\\packages\\system.xml.xmldocument\\4.3.0\\system.xml.xmldocument.4.3.0.nupkg.sha512",
-    "C:\\Users\\ts\\.nuget\\packages\\system.xml.xmlserializer\\4.3.0\\system.xml.xmlserializer.4.3.0.nupkg.sha512"
+    "C:\\Users\\ts\\.nuget\\packages\\system.xml.xmlserializer\\4.3.0\\system.xml.xmlserializer.4.3.0.nupkg.sha512",
+    "C:\\Users\\ts\\.nuget\\packages\\yamldotnet\\11.2.1\\yamldotnet.11.2.1.nupkg.sha512"
   ],
   "logs": []
 }

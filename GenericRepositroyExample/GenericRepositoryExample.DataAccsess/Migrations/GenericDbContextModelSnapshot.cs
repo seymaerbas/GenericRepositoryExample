@@ -169,7 +169,7 @@ namespace GenericRepositoryExample.DataAccsess.Migrations
 
                     b.HasKey("User_Id");
 
-                    b.ToTable("Users");
+                    b.ToTable("User");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>

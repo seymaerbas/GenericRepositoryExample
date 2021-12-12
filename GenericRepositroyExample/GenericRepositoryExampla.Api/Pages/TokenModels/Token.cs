@@ -9,6 +9,6 @@ namespace GenericRepositoryExampla.Api.Pages.TokenModels
     {
         public string AccessToken { get; set; }
         public DateTime Expration { get; set; } //yenilenme tarihini tutar
-        public string ResfreshToken { get; set; } //süre dolduysa yeni token yüklenir
+        public string RefreshToken { get; set; } //süre dolduysa yeni token yüklenir
     }
 }

@@ -20,7 +20,7 @@ namespace GenericRepositoryExampla.Api.Pages.TokenModels
         }
         //Token üretecek method
 
-        public Token CreateToken(User user)
+        public Token CreateAccessToken(User user)
         {
             Token token = new Token();
             SymmetricSecurityKey securtyKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["Token:Securitykey"]));
@@ -39,9 +39,11 @@ namespace GenericRepositoryExampla.Api.Pages.TokenModels
             JwtSecurityTokenHandler jwtSecurityTokenHandler = new JwtSecurityTokenHandler();
             token.AccessToken = jwtSecurityTokenHandler.WriteToken(jwtSecurityToken);
 
-            token.ResfreshToken = CreateRefreshToken();
+            token.RefreshToken = CreateRefreshToken();
             return token;
         }
+
+
         public string CreateRefreshToken()
         {
             byte[] tokenArray = new byte[32];

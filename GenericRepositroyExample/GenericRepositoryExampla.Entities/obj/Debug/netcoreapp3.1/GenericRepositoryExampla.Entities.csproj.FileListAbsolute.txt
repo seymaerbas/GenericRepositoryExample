@@ -1,4 +1,6 @@
 C:\Users\ts\source\repos\GenericRepositroyExample\GenericRepositoryExampla.Entities\bin\Debug\netcoreapp3.1\GenericRepositoryExampla.Entities.deps.json
+C:\Users\ts\source\repos\GenericRepositroyExample\GenericRepositoryExampla.Entities\bin\Debug\netcoreapp3.1\GenericRepositoryExampla.Entities.runtimeconfig.json
+C:\Users\ts\source\repos\GenericRepositroyExample\GenericRepositoryExampla.Entities\bin\Debug\netcoreapp3.1\GenericRepositoryExampla.Entities.runtimeconfig.dev.json
 C:\Users\ts\source\repos\GenericRepositroyExample\GenericRepositoryExampla.Entities\bin\Debug\netcoreapp3.1\GenericRepositoryExampla.Entities.dll
 C:\Users\ts\source\repos\GenericRepositroyExample\GenericRepositoryExampla.Entities\bin\Debug\netcoreapp3.1\GenericRepositoryExampla.Entities.pdb
 C:\Users\ts\source\repos\GenericRepositroyExample\GenericRepositoryExampla.Entities\obj\Debug\netcoreapp3.1\GenericRepositoryExampla.Entities.csproj.AssemblyReference.cache
@@ -8,6 +10,4 @@ C:\Users\ts\source\repos\GenericRepositroyExample\GenericRepositoryExampla.Entit
 C:\Users\ts\source\repos\GenericRepositroyExample\GenericRepositoryExampla.Entities\obj\Debug\netcoreapp3.1\GenericRepositoryExampla.Entities.csproj.CoreCompileInputs.cache
 C:\Users\ts\source\repos\GenericRepositroyExample\GenericRepositoryExampla.Entities\obj\Debug\netcoreapp3.1\GenericRepositoryExampla.Entities.dll
 C:\Users\ts\source\repos\GenericRepositroyExample\GenericRepositoryExampla.Entities\obj\Debug\netcoreapp3.1\GenericRepositoryExampla.Entities.pdb
-C:\Users\ts\source\repos\GenericRepositroyExample\GenericRepositoryExampla.Entities\bin\Debug\netcoreapp3.1\GenericRepositoryExampla.Entities.runtimeconfig.json
-C:\Users\ts\source\repos\GenericRepositroyExample\GenericRepositoryExampla.Entities\bin\Debug\netcoreapp3.1\GenericRepositoryExampla.Entities.runtimeconfig.dev.json
 C:\Users\ts\source\repos\GenericRepositroyExample\GenericRepositoryExampla.Entities\obj\Debug\netcoreapp3.1\GenericRepositoryExampla.Entities.genruntimeconfig.cache

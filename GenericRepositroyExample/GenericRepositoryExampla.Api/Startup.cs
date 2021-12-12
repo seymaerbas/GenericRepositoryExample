@@ -1,4 +1,5 @@
 
+using GenericRepositoryExampla.Api.Helpers;
 using GenericRepositoryExampla.Entities.Repositories;
 using GenericRepositoryExample.Business.Abstract;
 using GenericRepositoryExample.Business.Concrete;
@@ -38,13 +39,14 @@ namespace GenericRepositoryExampla.Api
         {
 
 
-            //services.addswaggerdocument();
+            services.AddSwaggerDocument();
             services.AddControllers();
+            services.AddTransient < GenericHelperMethods>() ;
             services.AddScoped<IUnitOfWork, UnitOfWork>(); //ayný olan her request için ayný sonucu oluþtururum
-            services.AddScoped<IUserServices, UserServices>();
-            services.AddScoped<IProfileServices, ProfileService>();
-            services.AddScoped<IContentServices, ContentServices>();
-            services.AddScoped<ICategoryServices, CategoryServices>();
+            services.AddTransient<IUserServices, UserServices>();
+            services.AddTransient<IProfileServices, ProfileService>();
+            services.AddTransient<IContentServices, ContentServices>();
+            services.AddTransient<ICategoryServices, CategoryServices>();
             services.AddDbContext<GenericDbContext>(options =>
             options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
             services.AddDefaultIdentity<IdentityUser>().AddRoles<IdentityRole>().AddEntityFrameworkStores<GenericDbContext>();
@@ -52,17 +54,17 @@ namespace GenericRepositoryExampla.Api
             //services.AddTransient //her talebi farký algýlar yeni sonuç oluþtururu
             //services.AddSingleton    //request ne olursa olsun ayný sonuç oluþtur
             services.AddMvc().AddRazorPagesOptions(opt=>opt.Conventions.AddPageRoute("/UserLogin",""));
-            //services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(opt=>opt.TokenValidationParameters = new TokenValidationParameters
-            //{
-            //    ValidateAudience = true,//Token deðerini kimlerin-hangi uygulamalarýn kullanýcýðýný belirler
-            //    ValidateIssuer=true,//oluþturulan token deðerini kim daðýtmýþtýr
-            //    ValidateLifetime = true,//Oluþturulan token deðerinin yaþam süresi
-            //    ValidateIssuerSigningKey =true, //Üretilen token deðerinin uygulamamýza ait olup olmadýðý ile alakalý security key'i
-            //    ValidIssuer = Configuration["Token:Issuer"], //
-            //    ValidAudience = Configuration["Token:Audince"],
-            //    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["Token:Securitykey"])),
-            //    ClockSkew = TimeSpan.Zero //Token süresinin uzatýlmasýný saðlar
-            //});
+            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(opt => opt.TokenValidationParameters = new TokenValidationParameters
+            {
+                ValidateAudience = true,//Token deðerini kimlerin-hangi uygulamalarýn kullanýcýðýný belirler
+                ValidateIssuer = true,//oluþturulan token deðerini kim daðýtmýþtýr
+                ValidateLifetime = true,//Oluþturulan token deðerinin yaþam süresi
+                ValidateIssuerSigningKey = true, //Üretilen token deðerinin uygulamamýza ait olup olmadýðý ile alakalý security key'i
+                ValidIssuer = Configuration["Token:Issuer"], //
+                ValidAudience = Configuration["Token:Audince"],
+                IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["Token:Securitykey"])),
+                ClockSkew = TimeSpan.Zero //Token süresinin uzatýlmasýný saðlar
+            });
             services.AddRazorPages();
         }
 
@@ -89,8 +91,8 @@ namespace GenericRepositoryExampla.Api
             //    //});
             
             //    app.UseRouting();
-            //    //app.UseOpenApi();
-            //    //app.UseSwaggerUi3();
+            app.UseOpenApi();
+            app.UseSwaggerUi3();
             //    app.UseAuthorization();
             //    app.UseEndpoints(endpoints =>
             //    {
@@ -107,8 +109,8 @@ namespace GenericRepositoryExampla.Api
             //    RequestPath = "/Pages"
             //});
             app.UseRouting();
-           // app.UseAuthentication();
-            //app.UseAuthorization();
+            app.UseAuthentication();
+            app.UseAuthorization();
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();

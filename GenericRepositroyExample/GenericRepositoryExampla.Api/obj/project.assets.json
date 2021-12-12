@@ -1013,6 +1013,17 @@
           "lib/netstandard2.0/_._": {}
         }
       },
+      "Microsoft.Extensions.ApiDescription.Server/3.0.0": {
+        "type": "package",
+        "build": {
+          "build/Microsoft.Extensions.ApiDescription.Server.props": {},
+          "build/Microsoft.Extensions.ApiDescription.Server.targets": {}
+        },
+        "buildMultiTargeting": {
+          "buildMultiTargeting/Microsoft.Extensions.ApiDescription.Server.props": {},
+          "buildMultiTargeting/Microsoft.Extensions.ApiDescription.Server.targets": {}
+        }
+      },
       "Microsoft.Extensions.Caching.Abstractions/3.1.21": {
         "type": "package",
         "dependencies": {
@@ -1648,6 +1659,18 @@
           }
         }
       },
+      "Namotion.Reflection/2.0.8": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.CSharp": "4.3.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/Namotion.Reflection.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Namotion.Reflection.dll": {}
+        }
+      },
       "NETStandard.Library/1.6.1": {
         "type": "package",
         "dependencies": {
@@ -1705,6 +1728,126 @@
         "runtime": {
           "lib/netstandard2.0/Newtonsoft.Json.dll": {}
         }
+      },
+      "NJsonSchema/10.6.3": {
+        "type": "package",
+        "dependencies": {
+          "Namotion.Reflection": "2.0.8",
+          "Newtonsoft.Json": "9.0.1"
+        },
+        "compile": {
+          "lib/netstandard2.0/NJsonSchema.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/NJsonSchema.dll": {}
+        }
+      },
+      "NJsonSchema.Yaml/10.6.3": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.CSharp": "4.4.1",
+          "NJsonSchema": "10.6.3",
+          "YamlDotNet": "11.2.1"
+        },
+        "compile": {
+          "lib/netstandard2.0/NJsonSchema.Yaml.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/NJsonSchema.Yaml.dll": {}
+        }
+      },
+      "NSwag.Annotations/13.15.1": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/NSwag.Annotations.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/NSwag.Annotations.dll": {}
+        }
+      },
+      "NSwag.AspNetCore/13.15.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.ApiDescription.Server": "3.0.0",
+          "Microsoft.Extensions.FileProviders.Embedded": "[3.1.0, 4.0.0)",
+          "NSwag.Annotations": "13.15.1",
+          "NSwag.Core": "13.15.1",
+          "NSwag.Core.Yaml": "13.15.1",
+          "NSwag.Generation": "13.15.1",
+          "NSwag.Generation.AspNetCore": "13.15.1"
+        },
+        "compile": {
+          "lib/netcoreapp3.1/NSwag.AspNetCore.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/NSwag.AspNetCore.dll": {}
+        },
+        "build": {
+          "build/NSwag.AspNetCore.props": {},
+          "build/NSwag.AspNetCore.targets": {}
+        },
+        "buildMultiTargeting": {
+          "buildMultiTargeting/NSwag.AspNetCore.props": {},
+          "buildMultiTargeting/NSwag.AspNetCore.targets": {}
+        }
+      },
+      "NSwag.Core/13.15.1": {
+        "type": "package",
+        "dependencies": {
+          "NJsonSchema": "10.6.3",
+          "Newtonsoft.Json": "9.0.1"
+        },
+        "compile": {
+          "lib/netstandard2.0/NSwag.Core.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/NSwag.Core.dll": {}
+        }
+      },
+      "NSwag.Core.Yaml/13.15.1": {
+        "type": "package",
+        "dependencies": {
+          "NJsonSchema.Yaml": "10.6.3",
+          "NSwag.Core": "13.15.1",
+          "YamlDotNet": "11.2.1"
+        },
+        "compile": {
+          "lib/netstandard2.0/NSwag.Core.Yaml.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/NSwag.Core.Yaml.dll": {}
+        }
+      },
+      "NSwag.Generation/13.15.1": {
+        "type": "package",
+        "dependencies": {
+          "NJsonSchema": "10.6.3",
+          "NSwag.Core": "13.15.1",
+          "Newtonsoft.Json": "9.0.1"
+        },
+        "compile": {
+          "lib/netstandard2.0/NSwag.Generation.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/NSwag.Generation.dll": {}
+        }
+      },
+      "NSwag.Generation.AspNetCore/13.15.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "[3.1.0, 6.0.0]",
+          "Microsoft.Extensions.Options": "[3.1.0, 6.0.0]",
+          "NSwag.Generation": "13.15.1"
+        },
+        "compile": {
+          "lib/netcoreapp3.1/NSwag.Generation.AspNetCore.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/NSwag.Generation.AspNetCore.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
       },
       "NuGet.Frameworks/4.7.0": {
         "type": "package",
@@ -3457,6 +3600,15 @@
           "lib/netstandard1.3/System.Xml.XmlSerializer.dll": {}
         }
       },
+      "YamlDotNet/11.2.1": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.1/YamlDotNet.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.1/YamlDotNet.dll": {}
+        }
+      },
       "GenericRepositoryExampla.Entities/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.1",
@@ -4599,6 +4751,33 @@
         "tools/netcoreapp2.0/any/ef.runtimeconfig.json"
       ]
     },
+    "Microsoft.Extensions.ApiDescription.Server/3.0.0": {
+      "sha512": "LH4OE/76F6sOCslif7+Xh3fS/wUUrE5ryeXAMcoCnuwOQGT5Smw0p57IgDh/pHgHaGz/e+AmEQb7pRgb++wt0w==",
+      "type": "package",
+      "path": "microsoft.extensions.apidescription.server/3.0.0",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "build/Microsoft.Extensions.ApiDescription.Server.props",
+        "build/Microsoft.Extensions.ApiDescription.Server.targets",
+        "buildMultiTargeting/Microsoft.Extensions.ApiDescription.Server.props",
+        "buildMultiTargeting/Microsoft.Extensions.ApiDescription.Server.targets",
+        "microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
+        "microsoft.extensions.apidescription.server.nuspec",
+        "tools/Newtonsoft.Json.dll",
+        "tools/dotnet-getdocument.deps.json",
+        "tools/dotnet-getdocument.dll",
+        "tools/dotnet-getdocument.runtimeconfig.json",
+        "tools/net461-x86/GetDocument.Insider.exe",
+        "tools/net461-x86/GetDocument.Insider.exe.config",
+        "tools/net461/GetDocument.Insider.exe",
+        "tools/net461/GetDocument.Insider.exe.config",
+        "tools/netcoreapp2.1/GetDocument.Insider.deps.json",
+        "tools/netcoreapp2.1/GetDocument.Insider.dll",
+        "tools/netcoreapp2.1/GetDocument.Insider.runtimeconfig.json"
+      ]
+    },
     "Microsoft.Extensions.Caching.Abstractions/3.1.21": {
       "sha512": "2/KlEGaW0ZNri9M2j9Bk2JM1rb0YBxEJl3EmRZze8n5qZ4NAtkZ8gkysvKqk6hVCJJHIL+LRfIbfqYan+GN/yQ==",
       "type": "package",
@@ -5721,6 +5900,25 @@
         "version.txt"
       ]
     },
+    "Namotion.Reflection/2.0.8": {
+      "sha512": "KITu+jQEcThZQHbiqbwiYQLpMoNFFjXXtncf2qmEedbacPKl1tCWvWKNdAa+afVxT+zBJbz/Dy56u9gLJoUjLg==",
+      "type": "package",
+      "path": "namotion.reflection/2.0.8",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net40/Namotion.Reflection.dll",
+        "lib/net40/Namotion.Reflection.xml",
+        "lib/net45/Namotion.Reflection.dll",
+        "lib/net45/Namotion.Reflection.xml",
+        "lib/netstandard1.0/Namotion.Reflection.dll",
+        "lib/netstandard1.0/Namotion.Reflection.xml",
+        "lib/netstandard2.0/Namotion.Reflection.dll",
+        "lib/netstandard2.0/Namotion.Reflection.xml",
+        "namotion.reflection.2.0.8.nupkg.sha512",
+        "namotion.reflection.nuspec"
+      ]
+    },
     "NETStandard.Library/1.6.1": {
       "sha512": "WcSp3+vP+yHNgS8EV5J7pZ9IRpeDuARBPN28by8zqff1wJQXm26PVU8L3/fYLBJVU7BtDyqNVWq2KlCVvSSR4A==",
       "type": "package",
@@ -5762,6 +5960,162 @@
         "lib/portable-net45+win8+wp8+wpa81/Newtonsoft.Json.xml",
         "newtonsoft.json.12.0.2.nupkg.sha512",
         "newtonsoft.json.nuspec"
+      ]
+    },
+    "NJsonSchema/10.6.3": {
+      "sha512": "jG6/+lxCpTbFb4kHW6bRdk8RqPQLmOK4S+N/5X4kuxwkepCBIGU9NIBUs/o86VAeOXXrMfAH/CnuYtyzyqWIwQ==",
+      "type": "package",
+      "path": "njsonschema/10.6.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "NuGetIcon.png",
+        "lib/net40/NJsonSchema.dll",
+        "lib/net40/NJsonSchema.xml",
+        "lib/net45/NJsonSchema.dll",
+        "lib/net45/NJsonSchema.xml",
+        "lib/netstandard1.0/NJsonSchema.dll",
+        "lib/netstandard1.0/NJsonSchema.xml",
+        "lib/netstandard2.0/NJsonSchema.dll",
+        "lib/netstandard2.0/NJsonSchema.xml",
+        "njsonschema.10.6.3.nupkg.sha512",
+        "njsonschema.nuspec"
+      ]
+    },
+    "NJsonSchema.Yaml/10.6.3": {
+      "sha512": "HW8zDhPKUqFxRf9SRJOxUrrMNBCJnYWIH9DtpCnfgl9dpCvtqrJDPUY7LcgpIrhNdO0aM9jJE5yPUdXCMH0HLA==",
+      "type": "package",
+      "path": "njsonschema.yaml/10.6.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "NuGetIcon.png",
+        "lib/net45/NJsonSchema.Yaml.dll",
+        "lib/netstandard1.3/NJsonSchema.Yaml.dll",
+        "lib/netstandard2.0/NJsonSchema.Yaml.dll",
+        "njsonschema.yaml.10.6.3.nupkg.sha512",
+        "njsonschema.yaml.nuspec"
+      ]
+    },
+    "NSwag.Annotations/13.15.1": {
+      "sha512": "WXOo3QNRJNVIfM56SK9jmyplXDeCDk22VuI9Ph++I90nC8AeD+Et9FsHnS4wqkd79LIlp1NDBiaRXa+2VrF5Fg==",
+      "type": "package",
+      "path": "nswag.annotations/13.15.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "NuGetIcon.png",
+        "lib/net45/NSwag.Annotations.dll",
+        "lib/net45/NSwag.Annotations.xml",
+        "lib/netstandard1.0/NSwag.Annotations.dll",
+        "lib/netstandard1.0/NSwag.Annotations.xml",
+        "lib/netstandard2.0/NSwag.Annotations.dll",
+        "lib/netstandard2.0/NSwag.Annotations.xml",
+        "nswag.annotations.13.15.1.nupkg.sha512",
+        "nswag.annotations.nuspec"
+      ]
+    },
+    "NSwag.AspNetCore/13.15.1": {
+      "sha512": "1Y2VxRZ2a3R4NiOGXBFIZCKbuBw3VpbwVpPyhs7YKzUEdr3W02ikDO/eGk90dHlBJcs9Wxh42Ds+xjyC2a2wpA==",
+      "type": "package",
+      "path": "nswag.aspnetcore/13.15.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "NuGetIcon.png",
+        "build/NSwag.AspNetCore.props",
+        "build/NSwag.AspNetCore.targets",
+        "buildMultiTargeting/NSwag.AspNetCore.props",
+        "buildMultiTargeting/NSwag.AspNetCore.targets",
+        "lib/net461/NSwag.AspNetCore.dll",
+        "lib/net461/NSwag.AspNetCore.xml",
+        "lib/net5.0/NSwag.AspNetCore.dll",
+        "lib/net5.0/NSwag.AspNetCore.xml",
+        "lib/net6.0/NSwag.AspNetCore.dll",
+        "lib/net6.0/NSwag.AspNetCore.xml",
+        "lib/netcoreapp3.1/NSwag.AspNetCore.dll",
+        "lib/netcoreapp3.1/NSwag.AspNetCore.xml",
+        "lib/netstandard1.6/NSwag.AspNetCore.dll",
+        "lib/netstandard1.6/NSwag.AspNetCore.xml",
+        "lib/netstandard2.0/NSwag.AspNetCore.dll",
+        "lib/netstandard2.0/NSwag.AspNetCore.xml",
+        "nswag.aspnetcore.13.15.1.nupkg.sha512",
+        "nswag.aspnetcore.nuspec"
+      ]
+    },
+    "NSwag.Core/13.15.1": {
+      "sha512": "QSwLaExg/ZDRw14jJ+QIu2o+FVvleq7YQ2gGz61xPmSDClKj/oQDTP9Gy+RgM1bWX9Hmd0RA6bbm2giq5OiB4Q==",
+      "type": "package",
+      "path": "nswag.core/13.15.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "NuGetIcon.png",
+        "lib/net45/NSwag.Core.dll",
+        "lib/net45/NSwag.Core.xml",
+        "lib/netstandard1.0/NSwag.Core.dll",
+        "lib/netstandard1.0/NSwag.Core.xml",
+        "lib/netstandard2.0/NSwag.Core.dll",
+        "lib/netstandard2.0/NSwag.Core.xml",
+        "nswag.core.13.15.1.nupkg.sha512",
+        "nswag.core.nuspec"
+      ]
+    },
+    "NSwag.Core.Yaml/13.15.1": {
+      "sha512": "+/Z3q4tRLGlIDPfX8B8lxs5MA16bJgoMDstFv0qCznkfJyAFok1kkRnHEzMRv7yl+NKJ6tTU5SbM1oaI3KqQjQ==",
+      "type": "package",
+      "path": "nswag.core.yaml/13.15.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "NuGetIcon.png",
+        "lib/net45/NSwag.Core.Yaml.dll",
+        "lib/netstandard1.3/NSwag.Core.Yaml.dll",
+        "lib/netstandard2.0/NSwag.Core.Yaml.dll",
+        "nswag.core.yaml.13.15.1.nupkg.sha512",
+        "nswag.core.yaml.nuspec"
+      ]
+    },
+    "NSwag.Generation/13.15.1": {
+      "sha512": "yMjd/xwEGuwu5EuXSQwfZ9e001bi5KaFO+czgD02pH6nM3Itc7Itt8Bl+eSLVQiBBBd61VnkadAihx/U7Exezg==",
+      "type": "package",
+      "path": "nswag.generation/13.15.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "NuGetIcon.png",
+        "lib/net45/NSwag.Generation.dll",
+        "lib/net45/NSwag.Generation.xml",
+        "lib/netstandard1.0/NSwag.Generation.dll",
+        "lib/netstandard1.0/NSwag.Generation.xml",
+        "lib/netstandard2.0/NSwag.Generation.dll",
+        "lib/netstandard2.0/NSwag.Generation.xml",
+        "nswag.generation.13.15.1.nupkg.sha512",
+        "nswag.generation.nuspec"
+      ]
+    },
+    "NSwag.Generation.AspNetCore/13.15.1": {
+      "sha512": "j5qm9oSzoUY/r+xJXXdIeQw6mbZyTTOnDsQd9JEU4nObHWuI+cmarC0bZndzps+wxmbRZ26WQUHJbwL/053Gbg==",
+      "type": "package",
+      "path": "nswag.generation.aspnetcore/13.15.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "NuGetIcon.png",
+        "lib/net461/NSwag.Generation.AspNetCore.dll",
+        "lib/net461/NSwag.Generation.AspNetCore.xml",
+        "lib/net5.0/NSwag.Generation.AspNetCore.dll",
+        "lib/net5.0/NSwag.Generation.AspNetCore.xml",
+        "lib/net6.0/NSwag.Generation.AspNetCore.dll",
+        "lib/net6.0/NSwag.Generation.AspNetCore.xml",
+        "lib/netcoreapp3.1/NSwag.Generation.AspNetCore.dll",
+        "lib/netcoreapp3.1/NSwag.Generation.AspNetCore.xml",
+        "lib/netstandard1.6/NSwag.Generation.AspNetCore.dll",
+        "lib/netstandard1.6/NSwag.Generation.AspNetCore.xml",
+        "lib/netstandard2.0/NSwag.Generation.AspNetCore.dll",
+        "lib/netstandard2.0/NSwag.Generation.AspNetCore.xml",
+        "nswag.generation.aspnetcore.13.15.1.nupkg.sha512",
+        "nswag.generation.aspnetcore.nuspec"
       ]
     },
     "NuGet.Frameworks/4.7.0": {
@@ -10369,6 +10723,31 @@
         "system.xml.xmlserializer.nuspec"
       ]
     },
+    "YamlDotNet/11.2.1": {
+      "sha512": "tBt8K+korVfrjH9wyDEhiLKxbs8qoLCLIFwvYgkSUuMC9//w3z0cFQ8LQAI/5MCKq+BMil0cfRTRvPeE7eXhQw==",
+      "type": "package",
+      "path": "yamldotnet/11.2.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "images/yamldotnet.png",
+        "lib/net20/YamlDotNet.dll",
+        "lib/net20/YamlDotNet.xml",
+        "lib/net35-client/YamlDotNet.dll",
+        "lib/net35-client/YamlDotNet.xml",
+        "lib/net35/YamlDotNet.dll",
+        "lib/net35/YamlDotNet.xml",
+        "lib/net45/YamlDotNet.dll",
+        "lib/net45/YamlDotNet.xml",
+        "lib/netstandard1.3/YamlDotNet.dll",
+        "lib/netstandard1.3/YamlDotNet.xml",
+        "lib/netstandard2.1/YamlDotNet.dll",
+        "lib/netstandard2.1/YamlDotNet.xml",
+        "yamldotnet.11.2.1.nupkg.sha512",
+        "yamldotnet.nuspec"
+      ]
+    },
     "GenericRepositoryExampla.Entities/1.0.0": {
       "type": "project",
       "path": "../GenericRepositoryExampla.Entities/GenericRepositoryExampla.Entities.csproj",
@@ -10399,7 +10778,8 @@
       "Microsoft.EntityFrameworkCore >= 3.1.3",
       "Microsoft.EntityFrameworkCore.Design >= 3.1.3",
       "Microsoft.EntityFrameworkCore.Tools >= 3.1.3",
-      "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 3.1.5"
+      "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 3.1.5",
+      "NSwag.AspNetCore >= 13.15.1"
     ]
   },
   "packageFolders": {
@@ -10499,6 +10879,10 @@
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
             "target": "Package",
             "version": "[3.1.5, )"
+          },
+          "NSwag.AspNetCore": {
+            "target": "Package",
+            "version": "[13.15.1, )"
           }
         },
         "imports": [
