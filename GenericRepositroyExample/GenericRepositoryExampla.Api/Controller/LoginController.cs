@@ -21,12 +21,14 @@ namespace GenericRepositoryExampla.Api.Controller
         private readonly IConfiguration _configuration;
         private readonly GenericHelperMethods _genericHelperMethods;
         //
+       
         public LoginController(GenericDbContext context,IConfiguration configuration, GenericHelperMethods genericHelperMethods)
         {
             _context = context;
             _configuration = configuration;
             _genericHelperMethods = genericHelperMethods;
         }
+        
         [HttpPost("[action]")]
         public async Task<bool> Create([FromBody] User user)
         {

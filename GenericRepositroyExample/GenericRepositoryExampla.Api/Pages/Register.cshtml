@@ -8,7 +8,7 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-    <meta charset="windows-1252">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>AdminLTE 3 | Registration Page</title>
 
@@ -61,8 +61,8 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="form-group">
 
+                        <div class="form-group">
                             <div class="input-group-append">
                                 <div class="input-group-text">
                                     <input type="password" name="password" class="form-control" id="exampleInputRetypepassword1" placeholder="Retype password">
@@ -70,6 +70,7 @@
                                 </div>
                             </div>
                         </div>
+
                         <div class="row">
                             <div class="col-8">
                                 <div class="icheck-primary">
@@ -109,19 +110,20 @@
     </div>
     <!-- /.register-box -->
     <!-- jQuery -->
- 
     <!-- AdminLTE App -->
-    <script src="../../dist/js/adminlte.min.js"></script>
     <script src="../../plugins/jquery/jquery.min.js"></script>
     <!-- Bootstrap 4 -->
     <script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
     <!-- jquery-validation -->
-    <script type="text/javascript" charset="windows-1252" src="../../plugins/jquery-validation/jquery.validate.min.js"></script>
-    <script type="text/javascript" charset="windows-1252" src="../../plugins/jquery-validation/additional-methods.min.js"></script>
+    <script src="../../plugins/jquery-validation/jquery.validate.min.js"></script>
+
+    <!-- jquery-validation -->
+    <!--<script type="text/javascript" charset="windows-1252" src="../../plugins/jquery-validation/jquery.validate.min.js"></script>
+    <script type="text/javascript" charset="windows-1252" src="../../plugins/jquery-validation/additional-methods.min.js"></script>-->
     <!-- AdminLTE App -->
-    <script src="../../dist/js/adminlte.min.js"></script>
+    <!--<script src="../../dist/js/adminlte.min.js"></script>-->
     <!-- AdminLTE for demo purposes -->
-    <script src="../../dist/js/demo.js"></script>
+    @*<script src="../../dist/js/demo.js"></script>*@
     <script>
         $(function () {
             $.validator.setDefaults({
@@ -176,6 +178,37 @@
             });
         });
     </script>
+    <script type="text/javascript">
+
+
+        $("#register").click(function () {
+            debugger;
+        
+            var model = {
+                nameSurname: $("[name='fullname']").val(),
+                email: $("[name='email']").val(),
+                password: $("[name='password']").val(),
+                isActive: false
+            };
+            console.log(JSON.stringify(model));
+            var user = JSON.stringify(model);
+            $.ajax({
+                type: 'POST',
+                url: 'https://localhost:44303/api/login/create',
+                contentType: 'application/json;charset=utf-8',
+                dataType: 'json',
+                data: user,
+                success: function (gelenveri) {
+                    $("register").removeAttr("disabled");
+                    alert("Kayıt işlemeniz başarılı")
+                },
+                error: function (hata) {
+                    $("register").removeAttr("disabled");
+                }
+            });
+        });
+
+    </script>
 </body>
 </html>
 @*public int User_Id { get; set; }
@@ -187,30 +220,4 @@
     public string Email { get; set; }
     public string Password { get; set; }
     public bool IsActive { get; set; }*@
-@*<script type="text/javascript">
-        $(document).ready(function () {
 
-            $("#register").click(function () {
-                var Model = {
-                    NameSurname: $("[name='Fullname']").val(),
-                    Email: $("[name='Email']").val(),
-                    Password: $("[name='Password']").val(),
-                    IsActive:0
-                }
-                $.ajax({
-
-                    url: 'https://localhost:44303/api/login/create',
-                    type: 'POST',
-                    contentType: 'application/json; charset=UTF-8',
-                    dataType: 'json',
-                    data: { JSON.stringify(Model) },
-                    success: function (gelenveri) {
-
-                    },
-                    error: function (hata) {
-
-                    }
-                });
-            });
-        });
-    </script>*@
