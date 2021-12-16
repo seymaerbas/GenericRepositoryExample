@@ -2,7 +2,7 @@
 @model GenericRepositoryExampla.Api.Pages.CategoryAdd1Model
 @{
     ViewData["Title"] = "Title";
-    Layout = "~/Pages/Shared/_LayoutSite1.cshtml";
+    Layout = null;
 }
 
 <!-- Main content -->
@@ -18,47 +18,118 @@
         <div class="card mb-4">
 
             <div class="card-body">
-                <form role="form" action="" method="post">
-
+                <form id="CategoryAdd">
                     <div class="form-group">
-                        <label>Parent</label>
+                        <div class="input-group-append">
 
-                        <select class="select2-single form-control" name="parent_id" id="select2Single">
-                            <option value="0" selected="selected">Main Category</option>
-
-
-
-                            <option value=""></option>
-
-
-                        </select>
+                            <label>Title</label>
+                            <input type="text" name="title" class="form-control" id="exampleInputTitle1">
+                        </div>
                     </div>
                     <div class="form-group">
-                        <label>Title</label>
-                        <input type="text" name="title" class="form-control">
+                        <div class="input-group-append">
+
+                            <label>Description</label>
+                            <input type="text" name="description" class="form-control" id="exampleInputDescription1">
+                        </div>
                     </div>
 
-                    <div class="form-group">
-                        <label>Description</label>
-                        <input type="text" name="description" class="form-control">
-                    </div>
-                    <div class="form-group">
-                        <label>Status</label>
-                        <select class="select2-single form-control" name="status" id="select2Single">
-                            <option selected="selected">False</option>
-                            <option>True</option>
+                    <div class="row">
 
-                        </select>
+                        <!-- /.col -->
+                        <div class="col-4">
+                            <button type="submit" name="AddCategory" class="btn btn-primary" id="AddCategory">Add Category</button>
+                        </div>
+
+                     
+                        <!-- /.col -->
                     </div>
 
-                    <button type="submit" class="btn btn-primary">Add Category</button>
+
                 </form>
             </div>
         </div>
-
     </div>
 
 
 
+    <script src="../../plugins/jquery/jquery.min.js"></script>
+    <!-- Bootstrap 4 -->
+    <script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- jquery-validation -->
+    <script src="../../plugins/jquery-validation/jquery.validate.min.js"></script>
+
 
 </section><!-- /.content -->
+<script>
+    $(function () {
+        $.validator.setDefaults({
+            submitHandler: function () {
+                alert("Form successful submitted!");
+            }
+        });
+        $('#CategoryAdd').validate({
+            rules: {
+
+                title: {
+                    required: true,
+                    maxlength: 20
+                },
+                description: {
+                    required: true,
+                    minlength: 5
+                },
+            },
+            messages: {
+
+                Title: {
+                    required: "Please enter a title",
+                    maxlength: "Your title must be no longer than 15 characters"
+                },
+                Description: {
+                    required: "Please provide a password",
+                    maxlength: "Your password must be at least 30 characters long"
+                },
+                terms: "Please accept our terms"
+            },
+            errorElement: 'span',
+            errorPlacement: function (error, element) {
+                error.addClass('invalid-feedback');
+                element.closest('.form-group').append(error);
+            },
+            highlight: function (element, errorClass, validClass) {
+                $(element).addClass('is-invalid');
+            },
+            unhighlight: function (element, errorClass, validClass) {
+                $(element).removeClass('is-invalid');
+            }
+        });
+    });
+</script>
+
+<script type="text/javascript">
+    $("#AddCategory").click(function () {
+        debugger;
+        var model = {
+            Title: $("[name='title']").val(),
+            Description: $("[name='description']").val(),
+        };
+        console.log(JSON.stringify(model));
+        var category = JSON.stringify(model);
+        $.ajax({
+            type: 'POST',
+            url: 'https://localhost:44303/api/category/create',
+            contentType: 'application/json;charset=utf-8',
+            dataType: 'json',
+            data: category,
+            success: function (gelenveri) {
+                $("AddCategory").removeAttr("disabled");
+                alert("Kayıt işlemeniz başarılı")
+            },
+            error: function (hata) {
+                $("AddCategory").removeAttr("disabled");
+            }
+        });
+    });
+
+</script>

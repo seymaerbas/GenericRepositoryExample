@@ -6,7 +6,7 @@
     Layout = null;
 }
 <!DOCTYPE html>
-<html lang="windows-1252">
+<html lang="en">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -32,150 +32,147 @@
                 <p class="login-box-msg">Sign in to start your session</p>
 
                 <form id="quickForm">
+                    <div class="card-body">
 
-                    <div class="form-group">
-                        <div class="input-group-append">
-                            <div class="input-group-text">
-                                <input type="email" name="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
-                                <span class="fas fa-envelope"></span>
+
+
+                        <div class="form-group">
+                            <div class="input-group-append">
+                                <div class="input-group-text">
+                                    <input type="email" name="email" class="form-control" id="exampleInputEmail2" placeholder="Enter email">
+                                    <span class="fas fa-envelope"></span>
+                                </div>
                             </div>
                         </div>
-                    </div>
 
-                    <div class="form-group">
-                        <div class="input-group-append">
-                            <div class="input-group-text">
-                                <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-                                <span class="fas fa-lock"></span>
+                        <div class="form-group">
+                            <div class="input-group-append">
+                                <div class="input-group-text">
+                                    <input type="password" name="password" class="form-control" id="exampleInputPassword2" placeholder="Password">
+                                    <span class="fas fa-lock"></span>
+                                </div>
                             </div>
                         </div>
-                    </div>
 
-                    <div class="row">
-                        <div class="col-8">
-                            <div class="icheck-primary">
-                                <input type="checkbox" id="remember">
-                                <label for="remember">
-                                    Remember Me
-                                </label>
+
+
+                        <div class="row">
+                            <div class="col-8">
+                                <div class="icheck-primary">
+                                    <input type="checkbox" id="remember">
+                                    <label for="remember">
+                                        Remember Me
+                                    </label>
+                                </div>
                             </div>
+                            <!-- /.col -->
+                            <div class="card-footer">
+                                <button type="submit" class="btn btn-primary" id="SignIn">Sign In</button>
+                            </div>
+                            <!-- /.col -->
                         </div>
-                        <!-- /.col -->
-                        <div class="card-footer">
-                            <button type="submit" class="btn btn-primary" id="SignIn">Sign In</button>
-                        </div>
-                        <!-- /.col -->
+
                     </div>
+                    <!-- /.card-body -->
+
                 </form>
-
-                <div class="social-auth-links text-center mb-3">
+                <div class="social-auth-links text-center">
                     <p>- OR -</p>
                     <a href="#" class="btn btn-block btn-primary">
-                        <i class="fab fa-facebook mr-2"></i> Sign in using Facebook
+                        <i class="fab fa-facebook mr-2"></i>
+                        Sign up using Facebook
                     </a>
                     <a href="#" class="btn btn-block btn-danger">
-                        <i class="fab fa-google-plus mr-2"></i> Sign in using Google+
+                        <i class="fab fa-google-plus mr-2"></i>
+                        Sign up using Google+
                     </a>
                 </div>
-                <!-- /.social-auth-links -->
 
-                <p class="mb-1">
-                    <a href="forgot-password.html">I forgot my password</a>
-                </p>
-                <p class="mb-0">
-                    <a href="~/Register" class="text-center">Register a new membership</a>
-                </p>
+                <a href="login.html" class="text-center">I already have a membership</a>
             </div>
-            <!-- /.login-card-body -->
-        </div>
+            <!-- /.form-box -->
+        </div><!-- /.card -->
     </div>
-    <!-- /.login-box -->
+    <!-- /.register-box -->
     <!-- jQuery -->
-    <script src="../../plugins/jquery/jquery.min.js"></script>
-    <!-- Bootstrap 4 -->
-    <script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
     <!-- AdminLTE App -->
-    <script src="../../dist/js/adminlte.min.js"></script>
+    <script src="../../plugins/jquery/jquery.min.js"></script>
+     Bootstrap 4 
+    <script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+     jquery-validation 
+    <script src="../../plugins/jquery-validation/jquery.validate.min.js"></script>
 
-    @*<script type="text/javascript" charset="windows-1252" src="../../plugins/jquery-validation/jquery.validate.min.js"></script>
-        <script type="text/javascript" charset="windows-1252" src="../../plugins/jquery-validation/additional-methods.min.js"></script>
-         AdminLTE App
-        <script src="../../dist/js/adminlte.min.js"></script>
-         AdminLTE for demo purposes
-        <script src="../../dist/js/demo.js"></script>
-        <script>
-            $(function () {
-                $.validator.setDefaults({
-                    submitHandler: function () {
-                        alert("Form successful submitted!");
-                    }
-                });
-                $('#quickForm').validate({
-                    rules: {
-
-                        email: {
-                            required: true,
-                            email: true,
-                        },
-                        password: {
-                            required: true,
-                            minlength: 5
-                        },
-                        terms: {
-                            required: true
-                        },
-                    },
-                    messages: {
-
-                        Email: {
-                            required: "Please enter a email address",
-                            email: "Please enter a valid email address"
-                        },
-                        Password: {
-                            required: "Please provide a password",
-                            minlength: "Your password must be at least 5 characters long"
-                        },
-                        terms: "Please accept our terms"
-                    },
-                    errorElement: 'span',
-                    errorPlacement: function (error, element) {
-                        error.addClass('invalid-feedback');
-                        element.closest('.form-group').append(error);
-                    },
-                    highlight: function (element, errorClass, validClass) {
-                        $(element).addClass('is-invalid');
-                    },
-                    unhighlight: function (element, errorClass, validClass) {
-                        $(element).removeClass('is-invalid');
-                    }
-                });
-            });
-        </script>*@
-    <script type="text/javascript">
-        $(document).ready(function () {
-
-            $("#SignIn").click(function () {
-                var model = {
-                    email: $("[name='email']").val(),
-                    password: $("[name='password']").val(),
-                    ısactive: 0
+  
+    <script>
+        $(function () {
+            $.validator.setDefaults({
+                submitHandler: function () {
+                    alert("Form successful submitted!");
                 }
-                $.ajax({
-
-                    url: 'https://localhost:44303/api/login/login',
-                    type: 'POST',
-                    contenttype: 'application/json; charset=utf-8',
-                    datatype: 'json',
-                    data: { json.stringify(model) },
-                    success: function (gelenveri) {
-
+            });
+            $('#quickForm').validate({
+                rules: {
+                   
+                    email: {
+                        required: true,
+                        email: true,
                     },
-                    error: function (hata) {
-
-                    }
-                });
+                    password: {
+                        required: true,
+                        minlength: 5
+                    },
+                },
+                messages: {
+                    
+                    Email: {
+                        required: "Please enter a email address",
+                        email: "Please enter a valid email address"
+                    },
+                    Password: {
+                        required: "Please provide a password",
+                        minlength: "Your password must be at least 5 characters long"
+                    },
+                    terms: "Please accept our terms"
+                },
+                errorElement: 'span',
+                errorPlacement: function (error, element) {
+                    error.addClass('invalid-feedback');
+                    element.closest('.form-group').append(error);
+                },
+                highlight: function (element, errorClass, validClass) {
+                    $(element).addClass('is-invalid');
+                },
+                unhighlight: function (element, errorClass, validClass) {
+                    $(element).removeClass('is-invalid');
+                }
             });
         });
     </script>
+    <script type="text/javascript">
+        $("#SignIn").click(function () {
+            var model = {
+                email: $("[name='email']").val(),
+                password: $("[name='password']").val(),
+            };
+            console.log(JSON.stringify(model));
+            var user = JSON.stringify(model);
+            $.ajax({
+                type:'POST',
+                url: 'https://localhost:44303/api/login/login',
+                contentType: 'application/json;charset=utf-8',
+                dataType: 'json',
+                data: user,
+                success: function (gelenveri) {
+                    $("SignIn").removeAttr("disabled");
+                    alert("Kayıt işlemeniz başarılı")
+                },
+                error: function (hata) {
+                    $("SignIn").removeAttr("disabled");
+                }
+            });
+        });
+
+    </script>
+   
 </body>
 </html>

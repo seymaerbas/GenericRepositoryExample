@@ -1,0 +1,138 @@
+﻿@page
+@model GenericRepositoryExampla.Api.Pages.DataTableModel
+@{
+    ViewData["Title"] = "Title";
+    Layout = "~/Pages/Shared/_LayoutSite1.cshtml";
+}
+
+<section class="content">
+
+    <!-- Default box -->
+    <div class="card">
+        <div class="card-header">
+            <h3 class="card-title">Projects</h3>
+
+            <div class="card-tools">
+                <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
+                    <i class="fas fa-minus"></i>
+                </button>
+                <button type="button" class="btn btn-tool" data-card-widget="remove" title="Remove">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+        </div>
+        <div class="card">
+
+            <script language="JavaScript">
+                function yenisayfaac(url, width, height) {
+                    window.open(url, '', 'toolbar=0,scrollbars=2,location=0,statusbar=1,menubar=0,resizable=0,width=' + width + ',height=' + height + ',left = 200,top = 100');
+                }
+            </script>
+            <a href="JavaScript:yenisayfaac('CategoryAdd1','940','760');" type="button" class="btn btn-danger mb-1" style="width: 200px">Add Category</a>
+        </div>
+
+        <div class="card-body p-0">
+            <table id="categoryDataTable" class="table table-striped projects">
+                <thead>
+                    <tr>
+                        <th style="width: 5%">
+                            Id
+                        </th>
+                        <th style="width: 28%">
+                            Title
+                        </th>
+                        <th style="width: 28%">
+                            Description
+                        </th>
+
+
+                        <th style="width: 20%">
+                            Edit
+                        </th>
+                        <th style="width: 20%">
+                            Delete
+                        </th>
+                    </tr>
+                </thead>
+                <tbody id="output">
+                    @*verilerin çoğaltılacağı yer*@
+                    <tr>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                       
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+        <!-- /.card-body -->
+    </div>
+    <!-- /.card -->
+
+</section>
+<script type="text/javascript">
+    fetch("https://localhost:44303/api/category/GetAllCategories").then(
+        res => {
+            res.json().then(
+                data => {
+                    console.log(data);
+                    if (data.length > 0) {
+
+
+
+                        var temp = "";
+                        data.forEach((itemData) => {
+                            temp += "<tr>";
+                            temp += "<td>" + itemData.category_Id + "</td>";
+                            temp += "<td>" + itemData.title + "</td>";
+                            temp += "<td>" + itemData.description + "</td></tr>";
+
+                        });
+                        document.getElementById('output').innerHTML = temp;
+                    }
+                }
+            )
+        }
+    )
+</script>
+@*<script>
+        $(function () {
+            $('#categoryDataTable').DataTable({
+                "paging": true,
+                "lengthChange": false,
+                "searching": false,
+                "ordering": true,
+                "info": true,
+                "autoWidth": false,
+                "responsive": true,
+            });
+        });</script>
+    <script>
+        $(document).ready(function () {
+            $("#categoryDataTable").DataTable({
+                "processing": true,
+                "serverSide": true,
+                "filter": true,
+                "ajax": {
+                    "url": "/api/category",
+                    "type": "POST",
+                    "datatype": "json"
+                },
+                "columnDefs": [{
+                    "targets": [0],
+                    "visible": false,
+                    "searchable": false
+                }],
+                "columns": [
+                    { "data": "category_id", "name": "Id", "autoWidth": true },
+                    { "data": "title", "name": "Title", "autoWidth": true },
+                    { "data": "description", "name": "Description", "autoWidth": true },
+
+                    {
+                        "render": function (data, row) { return "<a href='#' class='btn btn-danger' onclick=DeleteCustomer('" + row.id + "'); >Delete</a>"; }
+                    },
+                ]
+            });
+        });
+    </script>*@

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "oWQxcks5xcL9J+TdWif8Nc6v8IP22lhx8+uHDLxlDaVjyk4KfdlVNcDRdiRufj4/909ZDxVnFJsEUBYNQL249w==",
+  "dgSpecHash": "zCo9n1t3Z6BB9MXYjrbEbEwQqyrl6fEXaNKldFRnMQxkOK7oi54FKkFMjqP2IJf/hGc6d6rC5vgihQ/WbOgQVQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\ts\\source\\repos\\GenericRepositroyExample\\GenericRepositoryExampla.Api\\GenericRepositoryExampla.Api.csproj",
   "expectedPackageFiles": [
@@ -31,6 +31,8 @@
     "C:\\Users\\ts\\.nuget\\packages\\microsoft.aspnetcore.identity\\2.1.1\\microsoft.aspnetcore.identity.2.1.1.nupkg.sha512",
     "C:\\Users\\ts\\.nuget\\packages\\microsoft.aspnetcore.identity.entityframeworkcore\\3.1.3\\microsoft.aspnetcore.identity.entityframeworkcore.3.1.3.nupkg.sha512",
     "C:\\Users\\ts\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\3.1.21\\microsoft.aspnetcore.identity.ui.3.1.21.nupkg.sha512",
+    "C:\\Users\\ts\\.nuget\\packages\\microsoft.aspnetcore.jsonpatch\\3.1.3\\microsoft.aspnetcore.jsonpatch.3.1.3.nupkg.sha512",
+    "C:\\Users\\ts\\.nuget\\packages\\microsoft.aspnetcore.mvc.newtonsoftjson\\3.1.3\\microsoft.aspnetcore.mvc.newtonsoftjson.3.1.3.nupkg.sha512",
     "C:\\Users\\ts\\.nuget\\packages\\microsoft.aspnetcore.razor\\2.2.0\\microsoft.aspnetcore.razor.2.2.0.nupkg.sha512",
     "C:\\Users\\ts\\.nuget\\packages\\microsoft.aspnetcore.razor.language\\3.1.0\\microsoft.aspnetcore.razor.language.3.1.0.nupkg.sha512",
     "C:\\Users\\ts\\.nuget\\packages\\microsoft.aspnetcore.razor.runtime\\2.2.0\\microsoft.aspnetcore.razor.runtime.2.2.0.nupkg.sha512",
@@ -114,6 +116,7 @@
     "C:\\Users\\ts\\.nuget\\packages\\namotion.reflection\\2.0.8\\namotion.reflection.2.0.8.nupkg.sha512",
     "C:\\Users\\ts\\.nuget\\packages\\netstandard.library\\1.6.1\\netstandard.library.1.6.1.nupkg.sha512",
     "C:\\Users\\ts\\.nuget\\packages\\newtonsoft.json\\12.0.2\\newtonsoft.json.12.0.2.nupkg.sha512",
+    "C:\\Users\\ts\\.nuget\\packages\\newtonsoft.json.bson\\1.0.2\\newtonsoft.json.bson.1.0.2.nupkg.sha512",
     "C:\\Users\\ts\\.nuget\\packages\\njsonschema\\10.6.3\\njsonschema.10.6.3.nupkg.sha512",
     "C:\\Users\\ts\\.nuget\\packages\\njsonschema.yaml\\10.6.3\\njsonschema.yaml.10.6.3.nupkg.sha512",
     "C:\\Users\\ts\\.nuget\\packages\\nswag.annotations\\13.15.1\\nswag.annotations.13.15.1.nupkg.sha512",

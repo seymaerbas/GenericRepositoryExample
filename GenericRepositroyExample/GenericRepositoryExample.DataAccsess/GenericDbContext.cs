@@ -13,7 +13,7 @@ namespace GenericRepositoryExample.DataAccsess
         //protected override void OnConfiguring(DbContextOptionsBuilder optionBuilder)
         //{
         //    base.OnConfiguring(optionBuilder);
-        //    optionBuilder.UseSqlServer("Server=DESKTOP-HFLUHER;Database=GenericDb;uid=seyma;pwd=123");
+        //    optionBuilder.UseSqlServer("Server=DESKTOP-HFLUHER;Database=GenericDb;uid=seyma;pwd=123321!se");
 
         //}
         //protected override void OnModelCreating(ModelBuilder builder)

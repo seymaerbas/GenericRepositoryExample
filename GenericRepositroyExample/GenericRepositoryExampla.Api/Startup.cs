@@ -38,10 +38,12 @@ namespace GenericRepositoryExampla.Api
         public void ConfigureServices(IServiceCollection services)
         {
 
-
+            services.AddControllersWithViews()
+             .AddNewtonsoftJson(options =>
+                options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
             services.AddSwaggerDocument();
             services.AddControllers();
-            services.AddTransient < GenericHelperMethods>() ;
+            services.AddTransient<GenericHelperMethods>();
             services.AddScoped<IUnitOfWork, UnitOfWork>(); //ayný olan her request için ayný sonucu oluþtururum
             services.AddTransient<IUserServices, UserServices>();
             services.AddTransient<IProfileServices, ProfileService>();
@@ -53,7 +55,7 @@ namespace GenericRepositoryExampla.Api
             services.AddControllers();
             //services.AddTransient //her talebi farký algýlar yeni sonuç oluþtururu
             //services.AddSingleton    //request ne olursa olsun ayný sonuç oluþtur
-            services.AddMvc().AddRazorPagesOptions(opt=>opt.Conventions.AddPageRoute("/UserLogin",""));
+            services.AddMvc().AddRazorPagesOptions(opt => opt.Conventions.AddPageRoute("/UserLogin", ""));
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(opt => opt.TokenValidationParameters = new TokenValidationParameters
             {
                 ValidateAudience = true,//Token deðerini kimlerin-hangi uygulamalarýn kullanýcýðýný belirler
@@ -89,7 +91,7 @@ namespace GenericRepositoryExampla.Api
             //    //         Path.Combine(env.ContentRootPath, "Pages")),
             //    //    RequestPath = "/Pages"
             //    //});
-            
+
             //    app.UseRouting();
             app.UseOpenApi();
             app.UseSwaggerUi3();
