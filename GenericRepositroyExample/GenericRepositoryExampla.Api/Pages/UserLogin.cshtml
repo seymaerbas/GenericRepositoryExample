@@ -163,8 +163,9 @@
                 dataType: 'json',
                 data: user,
                 success: function (gelenveri) {
-                    $("SignIn").removeAttr("disabled");
-                    alert("Kayıt işlemeniz başarılı")
+                    window.location.href = "Categories";
+                    //$("SignIn").removeAttr("disabled");
+                    //alert("Kayıt işlemeniz başarılı")
                 },
                 error: function (hata) {
                     $("SignIn").removeAttr("disabled");

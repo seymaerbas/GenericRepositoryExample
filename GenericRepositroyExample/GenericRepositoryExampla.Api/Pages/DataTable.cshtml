@@ -21,8 +21,7 @@
                 </button>
             </div>
         </div>
-        <div class="card">
-
+      
             <script language="JavaScript">
                 function yenisayfaac(url, width, height) {
                     window.open(url, '', 'toolbar=0,scrollbars=2,location=0,statusbar=1,menubar=0,resizable=0,width=' + width + ',height=' + height + ',left = 200,top = 100');
@@ -67,10 +66,12 @@
             </table>
         </div>
         <!-- /.card-body -->
-    </div>
+   
     <!-- /.card -->
 
 </section>
+<script src="../../plugins/sweetalert2/sweetalert2.min.js"></script>
+<script src="../../plugins/toastr/toastr.min.js"></script>
 <script type="text/javascript">
     fetch("https://localhost:44303/api/category/GetAllCategories").then(
         res => {
@@ -96,6 +97,7 @@
         }
     )
 </script>
+
 @*<script>
         $(function () {
             $('#categoryDataTable').DataTable({

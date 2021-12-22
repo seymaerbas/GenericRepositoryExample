@@ -4038,7 +4038,7 @@
 	 *  @returns {bool} block the table drawing or not
 	 *  @memberof DataTable#oApi
 	 */
-	function _fnAjaxParameters( settings )
+	function example1_filter( settings )
 	{
 		var
 			columns = settings.aoColumns,

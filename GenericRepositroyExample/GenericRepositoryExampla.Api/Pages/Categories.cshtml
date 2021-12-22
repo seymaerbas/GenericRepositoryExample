@@ -30,7 +30,10 @@
             </script>
             <a href="JavaScript:yenisayfaac('CategoryAdd1','400','200');" type="button" class="btn btn-danger mb-1" style="width: 200px">Add Category</a>
         </div>
+
         <div id="categoryDataTable_wrapper" class="dataTables_wrapper form-inline dt-bootstrap">
+            </div><div class="col-sm-12 col-md-6"><div id="example1_filter" class="dataTables_filter"><label>Search:<input type="search" class="form-control form-control-sm" placeholder="" aria-controls="example1"></label></div></div>
+     
             <div class="row"><div class="col-sm-6"></div><div class="col-sm-6"></div></div><div class="row">
                 <div class="col-sm-12">
                     <table id="categoryDataTable" class="table table-striped projects">
@@ -49,30 +52,30 @@
                                 <td> </td>
                                 <td> </td>
 
-                                @*<td class="project_progress">
+                                <td class="project_progress" id="edit">
 
-                                        <a class="btn btn-info btn-sm" href="#">
-                                            <i class="fas fa-pencil-alt">
-                                            </i>
-                                            Edit
-                                        </a>
-                                    </td>
+                                    <a class="btn btn-info btn-sm" href="#">
+                                        <i class="fas fa-pencil-alt">
+                                        </i>
+                                        Edit
+                                    </a>
+                                </td>
+                               
+                                <td class="project_progress" id="delete">
 
-                                    <td class="project_progress">
-
-                                        <a class="btn btn-danger btn-sm" href="#">
-                                            <i class="fas fa-trash">
-                                            </i>
-                                            Delete
-                                        </a>
-                                    </td>*@
+                                    <a class="btn btn-danger btn-sm" href="#">
+                                        <i class="fas fa-trash">
+                                        </i>
+                                        Delete
+                                    </a>
+                                </td>
                             </tr>
 
                         </tbody>
 
                     </table>
                 </div>
-                <div >
+                <div>
 
                     <div class="col-sm-12">
                         <div class="dataTables_paginate paging_simple_numbers" id="categoryDataTable_paginate">
@@ -126,20 +129,7 @@
 <script src="../../plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
 <!-- AdminLTE App -->
 
-<script>
-    $(function () {
 
-        $('#categoryDataTable').DataTable({
-            "paging": true,
-            "lengthChange": false,
-            "searching": true,
-            "ordering": true,
-            "info": true,
-            "autoWidth": false,
-            "responsive": true,
-        });
-    });
-</script>
 <script type="text/javascript">
     fetch("https://localhost:44303/api/category/getallcategories").then(
         res => {
@@ -156,8 +146,7 @@
                             temp += "<td>" + itemData.category_Id + "</td>";
                             temp += "<td>" + itemData.title + "</td>";
                             temp += "<td>" + itemData.description + "</td></tr>";
-
-
+                            
                         });
                         document.getElementById('output').innerHTML = temp;
                     }

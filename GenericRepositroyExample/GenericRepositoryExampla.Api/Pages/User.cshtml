@@ -1,0 +1,75 @@
+﻿@page
+@model GenericRepositoryExampla.Api.Pages.UserModel
+@{
+
+    ViewData["Title"] = "Title";
+    Layout = "~/Pages/Shared/_LayoutSite1.cshtml";
+}
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <link rel="stylesheet" type="text/css" href="~/DataTable/DataTables-1.11.3/css/dataTables.bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="~/DataTable/DataTables-1.11.3/css/dataTables.bootstrap4.css" />
+</head>
+<body>
+    <div style="width: 500px">
+        <table class="table table-bordered table-striped table-inverse table-responsive" id="veriler">
+            <thead>
+                <tr role="row">
+                    <th class="sorting_asc" tabindex="0" aria-controls="categoryDataTable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending"> Id</th>
+                    <th class="sorting" tabindex="0" aria-controls="categoryDataTable" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending">Title</th>
+                    <th class="sorting" tabindex="0" aria-controls="categoryDataTable" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending">Description(s)</th>
+
+                </tr>
+            </thead>
+            <tbody id="output">
+                @*verilerin çoğaltılacağı yer*@
+                <tr>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+
+
+                </tr>
+
+            </tbody>
+
+        </table>
+    </div>
+    <script type="text/javascript" src="~/DataTable/jQuery-3.6.0/jquery-3.6.0.js"></script>
+    <script type="text/javascript" src="~/DataTable/Bootstrap-4-4.6.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="~/DataTable/DataTables-1.11.3/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="~/DataTable/DataTables-1.11.3/js/dataTables.bootstrap4.min.js"></script>
+    <script>
+        $('#veriler').dataTable();
+    </script>
+    <script type="text/javascript">
+        fetch("https://localhost:44303/api/category/getallcategories").then(
+            res => {
+                res.json().then(
+                    data => {
+                        console.log(data);
+                        if (data.length > 0) {
+
+
+
+                            var temp = "";
+                            data.forEach((itemData) => {
+                                temp += "<tr>";
+                                temp += "<td>" + itemData.category_Id + "</td>";
+                                temp += "<td>" + itemData.title + "</td>";
+                                temp += "<td>" + itemData.description + "</td></tr>";
+
+                            });
+                            document.getElementById('output').innerHTML = temp;
+                        }
+                    }
+                )
+            }
+        )
+    </script>
+
+</body>
+</html>

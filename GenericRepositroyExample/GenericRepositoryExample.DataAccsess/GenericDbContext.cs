@@ -1,4 +1,5 @@
 ﻿using GenericRepositoryExampla.Entities.Model;
+using GenericRepositoryExampla.Entity.Model;
 using GenericRepositoryExample.DataAccsess.Configurations;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
@@ -26,6 +27,12 @@ namespace GenericRepositoryExample.DataAccsess
         public DbSet<User> User { get; set; }
         public DbSet<Category> Categories { get; set; }
         public DbSet<Content> Contents { get; set; }
+        public DbSet<Faq> Faqs { get; set; }
+        public DbSet<Suggestion> Suggestions { get; set; }
+        public DbSet<Setting> Settings { get; set; }
+        public DbSet<Comment> Comments { get; set; }
+        public DbSet<Folder> Folders { get; set; }
+        public DbSet<Message> Messages { get; set; }
 
         public GenericDbContext(DbContextOptions<GenericDbContext> options)
            : base(options)

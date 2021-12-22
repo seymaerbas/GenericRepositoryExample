@@ -24,5 +24,6 @@ namespace GenericRepositoryExampla.Api.Controller
             var user = await _userServices.GetAllUsers();
             return Ok(user);
         }
+
     }
 }

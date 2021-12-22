@@ -95,21 +95,10 @@ namespace GenericRepositoryExampla.Api
             //    app.UseRouting();
             app.UseOpenApi();
             app.UseSwaggerUi3();
-            //    app.UseAuthorization();
-            //    app.UseEndpoints(endpoints =>
-            //    {
-            //        endpoints.MapControllers();
-            //        endpoints.MapRazorPages();
-            //    });
-            //}
+            
             app.UseHttpsRedirection();
             app.UseStaticFiles();
-            //app.UseStaticFiles(new StaticFileOptions
-            //{
-            //    FileProvider = new PhysicalFileProvider(
-            //    Path.Combine(env.ContentRootPath, "Pages")),
-            //    RequestPath = "/Pages"
-            //});
+          
             app.UseRouting();
             app.UseAuthentication();
             app.UseAuthorization();

@@ -172,6 +172,165 @@ namespace GenericRepositoryExample.DataAccsess.Migrations
                     b.ToTable("User");
                 });
 
+            modelBuilder.Entity("GenericRepositoryExampla.Entity.Model.Comment", b =>
+                {
+                    b.Property<int>("Comment_Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("CommentDetail")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Content_Id")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Rate")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Title")
+                        .HasColumnType("nvarchar(30)")
+                        .HasMaxLength(30);
+
+                    b.Property<int>("User_Id")
+                        .HasColumnType("int");
+
+                    b.Property<int>("User_id")
+                        .HasColumnType("int");
+
+                    b.HasKey("Comment_Id");
+
+                    b.HasIndex("Content_Id");
+
+                    b.HasIndex("User_id");
+
+                    b.ToTable("Comments");
+                });
+
+            modelBuilder.Entity("GenericRepositoryExampla.Entity.Model.Faq", b =>
+                {
+                    b.Property<int>("Faq_Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Answer")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Question")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Faq_Id");
+
+                    b.ToTable("Faqs");
+                });
+
+            modelBuilder.Entity("GenericRepositoryExampla.Entity.Model.Folder", b =>
+                {
+                    b.Property<int>("Folder_Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("Content_Id")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Type")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("User_id")
+                        .HasColumnType("int");
+
+                    b.HasKey("Folder_Id");
+
+                    b.HasIndex("Content_Id");
+
+                    b.HasIndex("User_id");
+
+                    b.ToTable("Folders");
+                });
+
+            modelBuilder.Entity("GenericRepositoryExampla.Entity.Model.Message", b =>
+                {
+                    b.Property<int>("Message_Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Email")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Messages")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Phone")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Subject")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Message_Id");
+
+                    b.ToTable("Messages");
+                });
+
+            modelBuilder.Entity("GenericRepositoryExampla.Entity.Model.Setting", b =>
+                {
+                    b.Property<int>("Setting_Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Facebook")
+                        .HasColumnType("nvarchar(30)")
+                        .HasMaxLength(30);
+
+                    b.Property<string>("Instagram")
+                        .HasColumnType("nvarchar(30)")
+                        .HasMaxLength(30);
+
+                    b.Property<string>("Twitter")
+                        .HasColumnType("nvarchar(30)")
+                        .HasMaxLength(30);
+
+                    b.HasKey("Setting_Id");
+
+                    b.ToTable("Settings");
+                });
+
+            modelBuilder.Entity("GenericRepositoryExampla.Entity.Model.Suggestion", b =>
+                {
+                    b.Property<int>("Suggestion_Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("Content_Id")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Detail")
+                        .HasColumnType("nvarchar(50)")
+                        .HasMaxLength(50);
+
+                    b.Property<string>("Title")
+                        .HasColumnType("nvarchar(30)")
+                        .HasMaxLength(30);
+
+                    b.Property<int>("User_id")
+                        .HasColumnType("int");
+
+                    b.HasKey("Suggestion_Id");
+
+                    b.HasIndex("Content_Id");
+
+                    b.HasIndex("User_id");
+
+                    b.ToTable("Suggestions");
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
                 {
                     b.Property<string>("Id")
@@ -386,6 +545,51 @@ namespace GenericRepositoryExample.DataAccsess.Migrations
                     b.HasOne("GenericRepositoryExampla.Entities.Model.User", "User")
                         .WithOne("Profiles")
                         .HasForeignKey("GenericRepositoryExampla.Entities.Model.Profile", "User_Id")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("GenericRepositoryExampla.Entity.Model.Comment", b =>
+                {
+                    b.HasOne("GenericRepositoryExampla.Entities.Model.Content", "Content")
+                        .WithMany()
+                        .HasForeignKey("Content_Id")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("GenericRepositoryExampla.Entities.Model.User", "User")
+                        .WithMany()
+                        .HasForeignKey("User_id")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("GenericRepositoryExampla.Entity.Model.Folder", b =>
+                {
+                    b.HasOne("GenericRepositoryExampla.Entities.Model.Content", "Content")
+                        .WithMany()
+                        .HasForeignKey("Content_Id")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("GenericRepositoryExampla.Entities.Model.User", "User")
+                        .WithMany()
+                        .HasForeignKey("User_id")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("GenericRepositoryExampla.Entity.Model.Suggestion", b =>
+                {
+                    b.HasOne("GenericRepositoryExampla.Entities.Model.Content", "Content")
+                        .WithMany()
+                        .HasForeignKey("Content_Id")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("GenericRepositoryExampla.Entities.Model.User", "User")
+                        .WithMany()
+                        .HasForeignKey("User_id")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });

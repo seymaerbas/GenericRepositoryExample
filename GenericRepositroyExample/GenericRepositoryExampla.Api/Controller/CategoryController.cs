@@ -1,4 +1,5 @@
 ﻿using GenericRepositoryExampla.Api.Helpers;
+using GenericRepositoryExampla.Api.Pages.Helpers;
 using GenericRepositoryExampla.Entities.Model;
 using GenericRepositoryExample.Business.Abstract;
 using GenericRepositoryExample.DataAccsess;
@@ -42,7 +43,38 @@ namespace GenericRepositoryExampla.Api.Controller
             var category = await _categoryServices.GetAllCategory();
             return Ok(category);
         }
+        
+        //[HttpGet("GetAll")]
+        //public async Task<Response<IEnumerable<Category>>> GetAll()
 
+        //{
+        //    var products = await _categoryServices.GetAllCategory();
+
+        //    return new Response<IEnumerable<Category>>().Ok(products);
+        //}
+        [HttpGet("GetAll")]
+        public async Task<Response<IEnumerable<Category>>> GetAll()
+
+        {
+            var Category = await _categoryServices.GetAllCategory();
+            if (!Category.Any())
+            {
+                return new Response<IEnumerable<Category>>().NoContent();
+            }
+            //List olsaydı .count parantez yazmamız dpğru değil.
+            return new Response<IEnumerable<Category>>().Ok(Category.Count(), Category);
+        }
+        //[HttpDelete("{id}")]
+        //public async Task<IActionResult> Delete(int id)
+        //{
+        //    if (await _categoryServices.GetCategoryById(id) != null)
+        //    {
+        //        _categoryServices.DeleteCategory(id);
+        //        return Ok("Deleted category");
+        //    }
+
+        //    return NotFound();
+        //}
         //public CategoryController(ICategoryServices categoryServices)
         //{
         //    this._categoryServices = categoryServices;
