@@ -59,8 +59,6 @@ namespace GenericRepositoryExampla.Api.Controller
                 if (!string.IsNullOrEmpty(searchValue))
                 {
                     userData = userData.Where(m => m.NameSurname.Contains(searchValue)
-                                                || m.Password.Contains(searchValue)
-                                                || m.IsActive.ToString().Contains(searchValue)
                                                 || m.Email.Contains(searchValue));
 
                 }

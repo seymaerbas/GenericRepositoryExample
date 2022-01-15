@@ -55,7 +55,7 @@ namespace GenericRepositoryExampla.Api.Controller
         //}
 
         [HttpPost("GetAllContents")]
-        public async Task<Response<IEnumerable<Content>>> GetAllContents()
+        public async Task<IActionResult> GetAllContents()
         {
             try
             {
@@ -78,14 +78,14 @@ namespace GenericRepositoryExampla.Api.Controller
                 {
                     customerData = customerData.Where(m => m.Content_Id.ToString().Contains(searchValue)
                                                 || m.Title.Contains(searchValue)
-                                                || m.Description.Contains(searchValue)
-                                                || m.Detail.Contains(searchValue));
+                                                || m.Description.Contains(searchValue));
+                                                
                 }
                 recordsTotal = customerData.Count();
                 var data = customerData.Skip(skip).Take(pageSize).ToList();
                 var jsonData = new { draw = draw, recordsFiltered = recordsTotal, recordsTotal = recordsTotal, data = data };
-                //return Ok(jsonData);
-                return new Response<IEnumerable<Content>>().Ok(customerData.Count(), customerData);
+                return Ok(jsonData);
+                //return new Response<IEnumerable<Content>>().Ok(customerData.Count(), customerData);
             }
             catch (Exception ex)
             {

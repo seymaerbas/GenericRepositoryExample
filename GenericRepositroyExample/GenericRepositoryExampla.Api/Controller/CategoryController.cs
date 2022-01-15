@@ -70,8 +70,8 @@ namespace GenericRepositoryExampla.Api.Controller
                 }
                 if (!string.IsNullOrEmpty(searchValue))
                 {
-                    categoryData = categoryData.Where(m => m.Title.Contains(searchValue)
-                                                        || m.Description.Contains(searchValue));
+                    categoryData = categoryData.Where(m => m.Title.Contains(searchValue));
+                                                       
 
                 }
 

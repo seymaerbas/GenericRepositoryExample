@@ -11,7 +11,7 @@ $(document).ready(function () {
         ajax: {
             url: "https://localhost:44303/api/user/getallusers",
             type: "POST",
-            dataType: "json",
+            /*dataType: "json",*/
 
             contentType: " application/x-www-form-urlencoded", /*dönen result sonucunu hangi formatta gelip gelmediğini belirler*/
         },
@@ -21,7 +21,7 @@ $(document).ready(function () {
             searchable: false
         }],
         columns: [
-            { data: "user_Id", name: "user_Id", autoWidth: true },
+            { data: "id", name: "Id", autoWidth: true },
             { data: "nameSurname", name: "nameSurname", autoWidth: true },
             { data: "password", name: "password", autoWidth: true },
             { data: "email", name: "email", autoWidth: true },
