@@ -20,6 +20,7 @@ namespace GenericRepositoryExampla.Entities.Repositories
        
         //bir tane data create edilecek buyüzden liste gerek yok
         Task AddAsync(TEntity entity);
+        void Update(TEntity entity);
 
         // belli bir aralıkta değer create etmek için
         Task AddRangeAsync(IEnumerable<TEntity> entities); 

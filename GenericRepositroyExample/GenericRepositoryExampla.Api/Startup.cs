@@ -37,10 +37,12 @@ namespace GenericRepositoryExampla.Api
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddDbContext<GenericDbContext>(_dbContext => _dbContext.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+            services.AddControllers();
 
-            services.AddControllersWithViews()
-             .AddNewtonsoftJson(options =>
-                options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
+            //services.AddControllersWithViews()
+            // .AddNewtonsoftJson(options =>
+            //    options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
             services.AddSwaggerDocument();
             services.AddControllers();
             services.AddTransient<GenericHelperMethods>();
@@ -49,10 +51,10 @@ namespace GenericRepositoryExampla.Api
             services.AddTransient<IProfileServices, ProfileService>();
             services.AddTransient<IContentServices, ContentServices>();
             services.AddTransient<ICategoryServices, CategoryServices>();
-            services.AddDbContext<GenericDbContext>(options =>
-            options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
-            services.AddDefaultIdentity<IdentityUser>().AddRoles<IdentityRole>().AddEntityFrameworkStores<GenericDbContext>();
-            services.AddControllers();
+            services.AddTransient<ICommentServices, CommentServices>();
+            services.AddTransient<IFolderServices, FolderServices>();
+         //   services.AddDefaultIdentity<IdentityUser>().AddRoles<IdentityRole>().AddEntityFrameworkStores<GenericDbContext>();
+          
             //services.AddTransient //her talebi farký algýlar yeni sonuç oluþtururu
             //services.AddSingleton    //request ne olursa olsun ayný sonuç oluþtur
             services.AddMvc().AddRazorPagesOptions(opt => opt.Conventions.AddPageRoute("/UserLogin", ""));
@@ -93,6 +95,8 @@ namespace GenericRepositoryExampla.Api
             //    //});
 
             //    app.UseRouting();
+            app.UseAuthentication();
+            // app.UseAuthorization();
             app.UseOpenApi();
             app.UseSwaggerUi3();
             
@@ -100,8 +104,7 @@ namespace GenericRepositoryExampla.Api
             app.UseStaticFiles();
           
             app.UseRouting();
-            app.UseAuthentication();
-            app.UseAuthorization();
+          
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();

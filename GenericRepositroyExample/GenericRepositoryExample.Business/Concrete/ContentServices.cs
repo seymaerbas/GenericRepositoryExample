@@ -37,10 +37,12 @@ namespace GenericRepositoryExample.Business.Concrete
             return await _unitOfWork.Contents.GetByIdAsync(id);
         }
 
-        public async Task UpdateContent(Content contentToBeUpdate, Content content)
+        public async Task UpdateContent(Content content)
         {
-            contentToBeUpdate.Title = content.Title;
+            _unitOfWork.Contents.Update(content);
             await _unitOfWork.CommitAsync();
         }
+
+
     }
 }

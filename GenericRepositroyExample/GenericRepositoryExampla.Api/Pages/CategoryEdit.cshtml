@@ -1,68 +1,31 @@
-﻿@page
-@model GenericRepositoryExampla.Api.Pages.CategoryEditModel
-@{
-}
-<section class="content">
-
-    <div class="card">
-
-        <h4 class="card-title">Edit Category</h4>
-    </div>
-
-    <div class="card-body">
-
-        <div class="card mb-4">
-
-            <div class="card-body">
-                <form role="form" action="" method="post">
-                    
-                    <div class="form-group">
-                        <label>Parent</label>
-
-                        <select class="select2-single form-control" name="parent_id" id="select2Single">
-
-                            <option value="0">Main Category</option>
-
-                          
-                          
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label>Title</label>
-                        <input type="text" name="title" value="" class="form-control">
-                    </div>
-                    <div class="form-group">
-                        <label>Keywords</label>
-                        <input type="text" name="keywords" value="" class="form-control">
-                    </div>
-                    <div class="form-group">
-                        <label>Description</label>
-                        <input type="text" name="description" value="" class="form-control">
-                    </div>
-                    <div class="form-group">
-                        <label>Status</label>
-                        <select class="select2-single form-control" name="status" id="select2Single">
-                            <option selected="selected"></option>
-                            <option>False</option>
-                            <option>True</option>
-
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <div class="custom-control custom-checkbox">
-                            <input type="checkbox" class="custom-control-input" id="customControlAutosizing">
-                            <label class="custom-control-label" for="customControlAutosizing">Remember me</label>
-                        </div>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Update Category</button>
-                </form>
-            </div>
+﻿
+@using GenericRepositoryExampla.Entities.Model
+@model Category
+<form id="create-form" method="post" asp-page="Categories" asp-route-id="@Model.Category_Id" asp-page-handler="CreateOrEdit" onsubmit="return jQueryModalPost(this);">
+    <div class="form-group row">
+        <label class="col-md-3 col-form-label">Kategori Adı</label>
+        <div class="col-md-9">
+            <input type="text" autocomplete="off" asp-for="Title" name="CategoryName" class="form-control">
+            <span asp-validation-for="Title" class="text-danger"></span>
         </div>
-
+    </div>
+    <div class="form-group row">
+        <label class="col-md-3 col-form-label">Kategori Tanımı</label>
+        <div class="col-md-9">
+            <input type="text" autocomplete="off" asp-for="Description" name="CategoryDescription" class="form-control">
+            <span asp-validation-for="Description" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-md-3">
+        </div>
+    </div>
+    <div class="form-group justify-content-between">
+        <button type="button" class="btn btn-secondary close-button" data-dismiss="modal">Cancel</button>
+        <button type="submit" class="btn btn-primary save-button">Save</button>
     </div>
 
-   
-
-
-</section><!-- /.content -->
+</form>
+<script type="text/javascript" language=javascript>
+    $.validator.unobtrusive.parse(document);
+</script>

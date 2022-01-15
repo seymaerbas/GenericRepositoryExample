@@ -1,157 +1,69 @@
 ﻿@page
 @model GenericRepositoryExampla.Api.Pages.CategoriesModel
 @{
+
     ViewData["Title"] = "Title";
     Layout = "~/Pages/Shared/_LayoutSite1.cshtml";
 }
-
-<section class="content">
-
-    <!-- Default box -->
+<link rel="stylesheet" href="../../plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
+<div class="card-body">
     <div class="card">
-        <div class="card-header">
-            <h3 class="card-title">Projects</h3>
 
-            <div class="card-tools">
-                <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
-                    <i class="fas fa-minus"></i>
-                </button>
-                <button type="button" class="btn btn-tool" data-card-widget="remove" title="Remove">
-                    <i class="fas fa-times"></i>
-                </button>
-            </div>
+        <script language="JavaScript">
+            function yenisayfaac(url, width, height) {
+                window.open(url, '', 'toolbar=0,scrollbars=2,location=0,statusbar=1,menubar=0,resizable=0,width=' + width + ',height=' + height + ',left = 200,top = 100');
+            }
+        </script>
+        <a href="JavaScript:yenisayfaac('ContentAdd','400','800');" type="button" class="btn btn-danger mb-1" style="width: 200px">Add Content</a>
+    </div>
+    <div id="example2_wrapper" class="dataTables_wrapper dt-bootstrap4">
+
+
+        <div class="col-sm-12">
+            <table id="categoryDatatable" class="table table-bordered table-hover dataTable dtr-inline" aria-describedby="example2_info">
+                <thead>
+                    <tr>
+                        <th class="sorting_asc" tabindex="0" aria-controls="categoryDataTable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending"> Id</th>
+                        <th class="sorting" tabindex="0" aria-controls="categoryDataTable" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending">Title</th>
+                        <th class="sorting" tabindex="0" aria-controls="categoryDataTable" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending">Description(s)</th>
+                        <th class="sorting" tabindex="0" aria-controls="categoryDataTable" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending">Delete(s)</th>
+                    </tr>
+                </thead>
+                @*<tbody id="output">
+                        <tr class="odd">
+                            <td class="dtr-control sorting_1" tabindex="0"></td>
+
+                        </tr>
+                        <tr class="even">
+                            <td class="dtr-control sorting_1" tabindex="0"> </td>
+
+                        </tr>
+                        <tr class="odd">
+                            <td class="dtr-control sorting_1" tabindex="0"></td>
+
+                        </tr>
+                        <tr class="even">
+                            <td class="dtr-control sorting_1" tabindex="0"></td>
+
+                        </tr>
+
+                    </tbody>*@
+
+            </table>
         </div>
-        <div class="card">
-
-            <script language="JavaScript">
-                function yenisayfaac(url, width, height) {
-                    window.open(url, '', 'toolbar=0,scrollbars=2,location=0,statusbar=1,menubar=0,resizable=0,width=' + width + ',height=' + height + ',left = 200,top = 100');
-                }
-            </script>
-            <a href="JavaScript:yenisayfaac('CategoryAdd1','400','200');" type="button" class="btn btn-danger mb-1" style="width: 200px">Add Category</a>
-        </div>
-
-        <div id="categoryDataTable_wrapper" class="dataTables_wrapper form-inline dt-bootstrap">
-            </div><div class="col-sm-12 col-md-6"><div id="example1_filter" class="dataTables_filter"><label>Search:<input type="search" class="form-control form-control-sm" placeholder="" aria-controls="example1"></label></div></div>
-     
-            <div class="row"><div class="col-sm-6"></div><div class="col-sm-6"></div></div><div class="row">
-                <div class="col-sm-12">
-                    <table id="categoryDataTable" class="table table-striped projects">
-                        <thead>
-                            <tr role="row">
-                                <th class="sorting_asc" tabindex="0" aria-controls="categoryDataTable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending"> Id</th>
-                                <th class="sorting" tabindex="0" aria-controls="categoryDataTable" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending">Title</th>
-                                <th class="sorting" tabindex="0" aria-controls="categoryDataTable" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending">Description(s)</th>
-
-                            </tr>
-                        </thead>
-                        <tbody id="output">
-                            @*verilerin çoğaltılacağı yer*@
-                            <tr>
-                                <td> </td>
-                                <td> </td>
-                                <td> </td>
-
-                                <td class="project_progress" id="edit">
-
-                                    <a class="btn btn-info btn-sm" href="#">
-                                        <i class="fas fa-pencil-alt">
-                                        </i>
-                                        Edit
-                                    </a>
-                                </td>
-                               
-                                <td class="project_progress" id="delete">
-
-                                    <a class="btn btn-danger btn-sm" href="#">
-                                        <i class="fas fa-trash">
-                                        </i>
-                                        Delete
-                                    </a>
-                                </td>
-                            </tr>
-
-                        </tbody>
-
-                    </table>
+    </div><div class="row">
+        @*<div class="col-sm-12 col-md-5">
+                <div class="dataTables_info" id="example2_info" role="status" aria-live="polite">
                 </div>
-                <div>
-
-                    <div class="col-sm-12">
-                        <div class="dataTables_paginate paging_simple_numbers" id="categoryDataTable_paginate">
-                            <ul class="pagination">
-                                <li class="paginate_button previous disabled" id="categoryDataTable_previous">
-                                    <a href="#" aria-controls="categoryDataTable" data-dt-idx="0" tabindex="0">Previous</a>
-                                </li>
-                                <li class="paginate_button active">
-                                    <a href="#" aria-controls="categoryDataTable" data-dt-idx="1" tabindex="0">1</a>
-                                </li>
-                                <li class="paginate_button ">
-                                    <a href="#" aria-controls="categoryDataTable" data-dt-idx="2" tabindex="0">2</a>
-                                </li>
-                                <li class="paginate_button ">
-                                    <a href="#" aria-controls="categoryDataTable" data-dt-idx="3" tabindex="0">3</a>
-                                </li>
-                                <li class="paginate_button ">
-                                    <a href="#" aria-controls="categoryDataTable" data-dt-idx="4" tabindex="0">4</a>
-                                </li>
-                                <li class="paginate_button ">
-                                    <a href="#" aria-controls="categoryDataTable" data-dt-idx="5" tabindex="0">5</a>
-                                </li>
-                                <li class="paginate_button ">
-                                    <a href="#" aria-controls="categoryDataTable" data-dt-idx="6" tabindex="0">6</a>
-                                </li>
-                                <li class="paginate_button next" id="categoryDataTable">
-                                    <a href="#" aria-controls="categoryDataTable" data-dt-idx="7" tabindex="0">Next</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+            </div>*@
 
     </div>
-    <!-- /.card-body -->
-    <!-- /.card -->
-
-</section>
-<!-- DataTables  & Plugins -->
-<script src="../../plugins/datatables/jquery.dataTables.min.js"></script>
-<script src="../../plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
-<script src="../../plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
-<script src="../../plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
-<script src="../../plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
-<script src="../../plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
-
-<script src="../../plugins/datatables-buttons/js/buttons.html5.min.js"></script>
-<script src="../../plugins/datatables-buttons/js/buttons.print.min.js"></script>
-<script src="../../plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
-<!-- AdminLTE App -->
+</div>
 
 
-<script type="text/javascript">
-    fetch("https://localhost:44303/api/category/getallcategories").then(
-        res => {
-            res.json().then(
-                data => {
-                    console.log(data);
-                    if (data.length > 0) {
-
-
-
-                        var temp = "";
-                        data.forEach((itemData) => {
-                            temp += "<tr>";
-                            temp += "<td>" + itemData.category_Id + "</td>";
-                            temp += "<td>" + itemData.title + "</td>";
-                            temp += "<td>" + itemData.description + "</td></tr>";
-                            
-                        });
-                        document.getElementById('output').innerHTML = temp;
-                    }
-                }
-            )
-        }
-    )
-</script>
+@section Scripts{
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/datatables/js/jquery.dataTables.min.js"></script>
+    <script src="~/lib/datatables/js/dataTables.bootstrap4.min.js"></script>
+    <script src="~/js/data.js"></script>
+}

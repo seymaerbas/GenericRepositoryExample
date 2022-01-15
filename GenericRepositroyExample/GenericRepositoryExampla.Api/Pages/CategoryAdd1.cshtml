@@ -4,132 +4,154 @@
     ViewData["Title"] = "Title";
     Layout = null;
 }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AdminLTE 3 | Project Add</title>
 
-<!-- Main content -->
-<section class="content">
+    <!-- Google Font: Source Sans Pro -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="../../plugins/fontawesome-free/css/all.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="../../dist/css/adminlte.min.css">
+</head>
 
-    <div class="card">
+    <div class="card-header">
+        <h3 class="card-title">Content Add</h3>
 
-        <h4 class="card-title">Add Category</h4>
-    </div>
-
-    <div class="card-body">
-
-        <div class="card mb-4">
-
-            <div class="card-body">
-                <form id="CategoryAdd">
-                    <div class="form-group">
-                        <div class="input-group-append">
-
-                            <label>Title</label>
-                            <input type="text" name="title" class="form-control" id="exampleInputTitle1">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="input-group-append">
-
-                            <label>Description</label>
-                            <input type="text" name="description" class="form-control" id="exampleInputDescription1">
-                        </div>
-                    </div>
-
-                    <div class="row">
-
-                        <!-- /.col -->
-                        <div class="col-4">
-                            <button type="submit" name="AddCategory" class="btn btn-primary" id="AddCategory">Add Category</button>
-                        </div>
-
-                     
-                        <!-- /.col -->
-                    </div>
-
-
-                </form>
-            </div>
+        <div class="card-tools">
+            <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
+                <i class="fas fa-minus"></i>
+            </button>
         </div>
     </div>
+    <!-- Main content -->
+    <section class="content">
+
+        <div class="card">
+
+            <h4 class="card-title">Add Category</h4>
+        </div>
+
+        <div class="card-body">
+
+            <div class="card mb-4">
+
+                <div class="card-body">
+                    <form id="CategoryAdd">
+                        <div class="form-group">
+                            <div class="input-group-append">
+
+                                <label>Title</label>
+                                <input type="text" name="title" class="form-control" id="exampleInputTitle1">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="input-group-append">
+
+                                <label>Description</label>
+                                <input type="text" name="description" class="form-control" id="exampleInputDescription1">
+                            </div>
+                        </div>
+
+                        <div class="row">
+
+                            <!-- /.col -->
+                            <div class="col-4">
+                                <button type="submit" name="AddCategory" class="btn btn-primary" id="AddCategory">Add Category</button>
+                            </div>
 
 
-
-    <script src="../../plugins/jquery/jquery.min.js"></script>
-    <!-- Bootstrap 4 -->
-    <script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <!-- jquery-validation -->
-    <script src="../../plugins/jquery-validation/jquery.validate.min.js"></script>
+                            <!-- /.col -->
+                        </div>
 
 
-</section><!-- /.content -->
-<script>
-    $(function () {
-        $.validator.setDefaults({
-            submitHandler: function () {
-                alert("Form successful submitted!");
-            }
+                    </form>
+                </div>
+            </div>
+        </div>
+   
+
+        <script src="../../plugins/jquery/jquery.min.js"></script>
+        <!-- Bootstrap 4 -->
+        <script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <!-- jquery-validation -->
+        <script src="../../plugins/jquery-validation/jquery.validate.min.js"></script>
+    
+
+    </section><!-- /.content -->
+    <script>
+        $(function () {
+            $.validator.setDefaults({
+                submitHandler: function () {
+                    alert("Form successful submitted!");
+                }
+            });
+            $('#CategoryAdd').validate({
+                rules: {
+
+                    title: {
+                        required: true,
+                        maxlength: 20
+                    },
+                    description: {
+                        required: true,
+                        minlength: 5
+                    },
+                },
+                messages: {
+
+                    Title: {
+                        required: "Please enter a title",
+                        maxlength: "Your title must be no longer than 15 characters"
+                    },
+                    Description: {
+                        required: "Please provide a password",
+                        maxlength: "Your password must be at least 30 characters long"
+                    },
+                    terms: "Please accept our terms"
+                },
+                errorElement: 'span',
+                errorPlacement: function (error, element) {
+                    error.addClass('invalid-feedback');
+                    element.closest('.form-group').append(error);
+                },
+                highlight: function (element, errorClass, validClass) {
+                    $(element).addClass('is-invalid');
+                },
+                unhighlight: function (element, errorClass, validClass) {
+                    $(element).removeClass('is-invalid');
+                }
+            });
         });
-        $('#CategoryAdd').validate({
-            rules: {
+    </script>
 
-                title: {
-                    required: true,
-                    maxlength: 20
+    <script type="text/javascript">
+        $("#AddCategory").click(function () {
+            debugger;
+            var model = {
+                Title: $("[name='title']").val(),
+                Description: $("[name='description']").val(),
+            };
+            console.log(JSON.stringify(model));
+            var category = JSON.stringify(model);
+            $.ajax({
+                type: 'POST',
+                url: 'https://localhost:44303/api/category/create',
+                contentType: 'application/json;charset=utf-8',
+                dataType: 'json',
+                data: category,
+                success: function (gelenveri) {
+                    $("AddCategory").removeAttr("disabled");
+                    alert("Kayıt işlemeniz başarılı")
                 },
-                description: {
-                    required: true,
-                    minlength: 5
-                },
-            },
-            messages: {
-
-                Title: {
-                    required: "Please enter a title",
-                    maxlength: "Your title must be no longer than 15 characters"
-                },
-                Description: {
-                    required: "Please provide a password",
-                    maxlength: "Your password must be at least 30 characters long"
-                },
-                terms: "Please accept our terms"
-            },
-            errorElement: 'span',
-            errorPlacement: function (error, element) {
-                error.addClass('invalid-feedback');
-                element.closest('.form-group').append(error);
-            },
-            highlight: function (element, errorClass, validClass) {
-                $(element).addClass('is-invalid');
-            },
-            unhighlight: function (element, errorClass, validClass) {
-                $(element).removeClass('is-invalid');
-            }
+                error: function (hata) {
+                    $("AddCategory").removeAttr("disabled");
+                }
+            });
         });
-    });
-</script>
 
-<script type="text/javascript">
-    $("#AddCategory").click(function () {
-        debugger;
-        var model = {
-            Title: $("[name='title']").val(),
-            Description: $("[name='description']").val(),
-        };
-        console.log(JSON.stringify(model));
-        var category = JSON.stringify(model);
-        $.ajax({
-            type: 'POST',
-            url: 'https://localhost:44303/api/category/create',
-            contentType: 'application/json;charset=utf-8',
-            dataType: 'json',
-            data: category,
-            success: function (gelenveri) {
-                $("AddCategory").removeAttr("disabled");
-                alert("Kayıt işlemeniz başarılı")
-            },
-            error: function (hata) {
-                $("AddCategory").removeAttr("disabled");
-            }
-        });
-    });
-
-</script>
+    </script>

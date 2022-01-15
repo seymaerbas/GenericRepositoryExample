@@ -10,8 +10,8 @@ namespace GenericRepositoryExampla.Entities.Model
 {
     public class User:IdentityUser<int>
     {
-        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int User_Id { get; set; }
+      
+      
         [StringLength(50)]
         [Required]
         public string NameSurname { get; set; }

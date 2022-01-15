@@ -11,7 +11,8 @@ namespace GenericRepositoryExample.Business.Abstract
         Task<IEnumerable<Content>> GetAllContent(); //tüm profilleri getir
         Task<Content> GetContentById(int id); //idsi ? olan profili getir
         Task<Content> CreateContent(Content content); //entity
-        Task UpdateContent(Content contentToBeUpdate, Content content);
+        Task UpdateContent( Content content);
         Task DeleteContent(Content content);
+       
     }
 }

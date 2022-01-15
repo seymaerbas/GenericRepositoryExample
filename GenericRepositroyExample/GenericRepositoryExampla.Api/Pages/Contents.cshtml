@@ -14,103 +14,78 @@
                 window.open(url, '', 'toolbar=0,scrollbars=2,location=0,statusbar=1,menubar=0,resizable=0,width=' + width + ',height=' + height + ',left = 200,top = 100');
             }
         </script>
-        <a href="JavaScript:yenisayfaac('CategoryAdd1','400','200');" type="button" class="btn btn-danger mb-1" style="width: 200px">Add Category</a>
+        <a href="JavaScript:yenisayfaac('ContentAdd','400','800');" type="button" class="btn btn-danger mb-1" style="width: 200px">Add Content</a>
     </div>
     <div id="example2_wrapper" class="dataTables_wrapper dt-bootstrap4">
-        <div class="row">
-            <div class="col-sm-12 col-md-6">
-                <div class="dt-buttons btn-group flex-wrap">
-                    <button class="btn btn-secondary buttons-copy buttons-html5" tabindex="0" aria-controls="example1" type="button"><span>Copy</span></button> <button class="btn btn-secondary buttons-csv buttons-html5" tabindex="0" aria-controls="example1" type="button"><span>CSV</span></button>
-                    <button class="btn btn-secondary buttons-excel buttons-html5" tabindex="0" aria-controls="example1" type="button"><span>Excel</span></button> <button class="btn btn-secondary buttons-pdf buttons-html5" tabindex="0" aria-controls="example1" type="button"><span>PDF</span></button>
-                    <button class="btn btn-secondary buttons-print" tabindex="0" aria-controls="example1" type="button"><span>Print</span></button>
-                    <div class="btn-group">
-                        <button class="btn btn-secondary buttons-collection dropdown-toggle buttons-colvis" tabindex="0" aria-controls="example1" type="button" aria-haspopup="true" aria-expanded="false"><span>Column visibility</span></button>
-                    </div>
-                </div>
-            </div><div class="col-sm-12 col-md-6"><div id="example1_filter" class="dataTables_filter"><label>Search:<input type="search" class="form-control form-control-sm" placeholder="" aria-controls="example1"></label></div></div>
-        </div>
+
 
         <div class="col-sm-12">
-            <table id="example1" class="table table-bordered table-hover dataTable dtr-inline" aria-describedby="example2_info">
+            <table id="customerDatatable" class="table table-bordered table-hover dataTable dtr-inline" aria-describedby="example2_info">
                 <thead>
                     <tr>
-                        <th class="sorting sorting_asc" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending">ID</th>
-                        <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending">Category ID</th>
-                        <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending">Title(s)</th>
-                        <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending">Description</th>
+                        <th class="sorting sorting_asc" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending">conten_Id</th>
+                        <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending">title </th>
+                        <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending">description(s)</th>
+                        <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending">detail</th>
+                        <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending">delete</th>
                     </tr>
                 </thead>
-                <tbody id="output">
-                    <tr class="odd">
-                        <td class="dtr-control sorting_1" tabindex="0"></td>
+                @*<tbody id="output">
+                        <tr class="odd">
+                            <td class="dtr-control sorting_1" tabindex="0"></td>
 
-                    </tr>
-                    <tr class="even">
-                        <td class="dtr-control sorting_1" tabindex="0"> </td>
+                        </tr>
+                        <tr class="even">
+                            <td class="dtr-control sorting_1" tabindex="0"> </td>
 
-                    </tr>
-                    <tr class="odd">
-                        <td class="dtr-control sorting_1" tabindex="0"></td>
+                        </tr>
+                        <tr class="odd">
+                            <td class="dtr-control sorting_1" tabindex="0"></td>
 
-                    </tr>
-                    <tr class="even">
-                        <td class="dtr-control sorting_1" tabindex="0"></td>
+                        </tr>
+                        <tr class="even">
+                            <td class="dtr-control sorting_1" tabindex="0"></td>
 
-                    </tr>
+                        </tr>
 
-                </tbody>
+                    </tbody>*@
 
             </table>
         </div>
     </div><div class="row">
-        <div class="col-sm-12 col-md-5">
-            <div class="dataTables_info" id="example2_info" role="status" aria-live="polite">
-            </div>
-        </div>
-        <div class="col-sm-12 col-md-7">
-            <div class="dataTables_paginate paging_simple_numbers" id="example2_paginate">
-                <ul class="pagination">
-                    <li class="paginate_button page-item previous disabled" id="example2_previous">
-                        <a href="#" aria-controls="example2" data-dt-idx="0" tabindex="0" class="page-link">Previous</a>
-                    </li>
-                    <li class="paginate_button page-item active"><a href="#" aria-controls="example2" data-dt-idx="1" tabindex="0" class="page-link">1</a></li>
-                    <li class="paginate_button page-item ">
-                        <a href="#" aria-controls="example2" data-dt-idx="2" tabindex="0" class="page-link">2</a>
-                    </li>
-                    <li class="paginate_button page-item "><a href="#" aria-controls="example2" data-dt-idx="3" tabindex="0" class="page-link">3</a></li>
-                    <li class="paginate_button page-item ">
-                        <a href="#" aria-controls="example2" data-dt-idx="4" tabindex="0" class="page-link">4</a>
-                    </li>
-                    <li class="paginate_button page-item "><a href="#" aria-controls="example2" data-dt-idx="5" tabindex="0" class="page-link">5</a></li>
-                    <li class="paginate_button page-item "><a href="#" aria-controls="example2" data-dt-idx="6" tabindex="0" class="page-link">6</a></li>
-                    <li class="paginate_button page-item next" id="example2_next">
-                        <a href="#" aria-controls="example2" data-dt-idx="7" tabindex="0" class="page-link">Next</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
+        @*<div class="col-sm-12 col-md-5">
+                <div class="dataTables_info" id="example2_info" role="status" aria-live="polite">
+                </div>
+            </div>*@
+
     </div>
 </div>
 
 
-<script src="../../plugins/jquery/jquery.min.js"></script>
+@section Scripts{
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/datatables/js/jquery.dataTables.min.js"></script>
+    <script src="~/lib/datatables/js/dataTables.bootstrap4.min.js"></script>
+    <script src="~/js/contentstable.js"></script>
+}
+
+
+<!--<script src="../../plugins/jquery/jquery.min.js"></script>
+
 <!-- Bootstrap 4 -->
-<script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!--<script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>-->
 <!-- DataTables  & Plugins -->
-<script src="../../plugins/datatables/jquery.dataTables.min.js"></script>
+<!--<script src="../../plugins/datatables/jquery.dataTables.min.js"></script>
 <script src="../../plugins/datatables/jquery.dataTables.js"></script>
 <script src="../../plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
 <script src="../../plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
 <script src="../../plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
 <script src="../../plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
-<script src="../../plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
-
-
+<script src="../../plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>-->
 <!-- AdminLTE App -->
-<script src="../../dist/js/adminlte.min.js"></script>
+<!--<script src="../../dist/js/adminlte.min.js"></script>-->
 <!-- AdminLTE for demo purposes -->
-
-<script>
+<!--<script>
     $(function () {
 
         $('#example1').DataTable({
@@ -186,4 +161,4 @@
         }
         $(this).dataTable(window.dtDefaultOptions);
 
-</script>
+</script>-->

@@ -9,7 +9,7 @@ using System.Text;
 
 namespace GenericRepositoryExample.DataAccsess
 {
-    public class GenericDbContext :IdentityDbContext
+    public class GenericDbContext :IdentityDbContext<User, UserRole, int>
     {
         //protected override void OnConfiguring(DbContextOptionsBuilder optionBuilder)
         //{
@@ -23,6 +23,12 @@ namespace GenericRepositoryExample.DataAccsess
         //    builder.ApplyConfiguration(new ContentConfiguration());
         //    builder.ApplyConfiguration(new CategoryConfiguration());
         //}
+
+
+        public GenericDbContext()
+        {
+        }
+
         public DbSet<Profile> Profiles { get; set; }
         public DbSet<User> User { get; set; }
         public DbSet<Category> Categories { get; set; }
@@ -43,10 +49,7 @@ namespace GenericRepositoryExample.DataAccsess
         {
             base.OnModelCreating(builder);
         }
-        public GenericDbContext()
-        {
-        }
-
+       
        
     }
 }

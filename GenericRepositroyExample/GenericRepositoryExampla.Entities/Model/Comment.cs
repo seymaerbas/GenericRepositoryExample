@@ -11,9 +11,6 @@ namespace GenericRepositoryExampla.Entity.Model
     {
         [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Comment_Id { get; set; }
-        public int User_Id { get; set; }
-
-
         public int Rate { get; set; }
         public string CommentDetail { get; set; }
         [StringLength(30)]
@@ -23,8 +20,10 @@ namespace GenericRepositoryExampla.Entity.Model
         public int Content_Id { get; set; }
         public Content Content { get; set; }
         //User :1 Comment:N
+
         [ForeignKey("User")]
-        public int User_id { get; set; }
+        public int User_Id { get; set; }
+
         public User User { get; set; }
     }
 }

@@ -15,7 +15,7 @@ namespace GenericRepositoryExampla.Entity.Model
 
         //User:1 Folder:N
         [ForeignKey("User")]
-        public int User_id { get; set; }
+        public int User_Id { get; set; }
         public User User { get; set; }
         //Folder:N Content:1
         [ForeignKey("Content")]

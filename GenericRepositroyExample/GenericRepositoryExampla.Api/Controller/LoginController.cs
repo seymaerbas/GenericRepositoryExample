@@ -1,5 +1,5 @@
 ﻿using GenericRepositoryExampla.Api.Helpers;
-using GenericRepositoryExampla.Api.Pages.TokenModels;
+using GenericRepositoryExampla.Api.TokenModels;
 using GenericRepositoryExampla.Entities.Model;
 using GenericRepositoryExample.DataAccsess;
 using Microsoft.AspNetCore.Http;

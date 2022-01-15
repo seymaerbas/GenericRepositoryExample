@@ -4,72 +4,89 @@
     ViewData["Title"] = "Title";
     Layout = "~/Pages/Shared/_LayoutSite1.cshtml";
 }
+<link rel="stylesheet" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css">
+<table id="categoryDatatable" class="display" style="width:100%">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+</table>
 
-<section class="content">
+@section Scripts{
+    @*<script src="https://code.jquery.com/jquery-3.5.1.js"></script>*@
+    <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+    <script src="~/js/data.js"></script>
+}
+
+
+
+<!--<section class="content">
 
     <!-- Default box -->
-    <div class="card">
-        <div class="card-header">
-            <h3 class="card-title">Projects</h3>
+<!--<div class="card">
+    <div class="card-header">
+        <h3 class="card-title">Projects</h3>
 
-            <div class="card-tools">
-                <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
-                    <i class="fas fa-minus"></i>
-                </button>
-                <button type="button" class="btn btn-tool" data-card-widget="remove" title="Remove">
-                    <i class="fas fa-times"></i>
-                </button>
-            </div>
+        <div class="card-tools">
+            <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
+                <i class="fas fa-minus"></i>
+            </button>
+            <button type="button" class="btn btn-tool" data-card-widget="remove" title="Remove">
+                <i class="fas fa-times"></i>
+            </button>
         </div>
-      
-            <script language="JavaScript">
-                function yenisayfaac(url, width, height) {
-                    window.open(url, '', 'toolbar=0,scrollbars=2,location=0,statusbar=1,menubar=0,resizable=0,width=' + width + ',height=' + height + ',left = 200,top = 100');
-                }
-            </script>
-            <a href="JavaScript:yenisayfaac('CategoryAdd1','940','760');" type="button" class="btn btn-danger mb-1" style="width: 200px">Add Category</a>
-        </div>
+    </div>
 
-        <div class="card-body p-0">
-            <table id="categoryDataTable" class="table table-striped projects">
-                <thead>
-                    <tr>
-                        <th style="width: 5%">
-                            Id
-                        </th>
-                        <th style="width: 28%">
-                            Title
-                        </th>
-                        <th style="width: 28%">
-                            Description
-                        </th>
+        <script language="JavaScript">
+            function yenisayfaac(url, width, height) {
+                window.open(url, '', 'toolbar=0,scrollbars=2,location=0,statusbar=1,menubar=0,resizable=0,width=' + width + ',height=' + height + ',left = 200,top = 100');
+            }
+        </script>
+        <a href="JavaScript:yenisayfaac('CategoryAdd1','940','760');" type="button" class="btn btn-danger mb-1" style="width: 200px">Add Category</a>
+    </div>
+
+<div class="card-body p-0">
+    <table id="example" class="table table-striped table-bordered" style="width:100%">
+        <thead>
+            <tr>
+                <th style="width: 5%">
+                    Id
+                </th>
+                <th style="width: 28%">
+                    Title
+                </th>
+                <th style="width: 28%">
+                    Description
+                </th>
 
 
-                        <th style="width: 20%">
-                            Edit
-                        </th>
-                        <th style="width: 20%">
-                            Delete
-                        </th>
-                    </tr>
-                </thead>
-                <tbody id="output">
-                    @*verilerin çoğaltılacağı yer*@
-                    <tr>
-                        <td> </td>
-                        <td> </td>
-                        <td> </td>
-                       
-                    </tr>
+                <th style="width: 20%">
+                    Edit
+                </th>
+                <th style="width: 20%">
+                    Delete
+                </th>
+            </tr>
+        </thead>
+        <tbody id="output">-->
+@*verilerin çoğaltılacağı yer*@
+<tr>
+    <td> </td>
+    <td> </td>
+    <td> </td>
 
-                </tbody>
-            </table>
-        </div>
-        <!-- /.card-body -->
-   
-    <!-- /.card -->
+</tr>
 
-</section>
+            </tbody>
+        </table>
+    </div>-->
+<!-- /.card-body -->
+<!-- /.card -->
+<!--</section>
 <script src="../../plugins/sweetalert2/sweetalert2.min.js"></script>
 <script src="../../plugins/toastr/toastr.min.js"></script>
 <script type="text/javascript">
@@ -96,8 +113,7 @@
             )
         }
     )
-</script>
-
+</script>-->
 @*<script>
         $(function () {
             $('#categoryDataTable').DataTable({

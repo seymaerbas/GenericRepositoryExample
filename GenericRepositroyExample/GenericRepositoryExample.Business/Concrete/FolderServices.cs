@@ -29,7 +29,7 @@ namespace GenericRepositoryExample.Business.Concrete
             await _unitOfWork.CommitAsync();
         }
 
-        public async Task<IEnumerable<Folder>> GetAllFolders()
+        public async Task<IEnumerable<Folder>> GetAllFolder()
         {
             return await _unitOfWork.Folder.GetAllAsync();
         }

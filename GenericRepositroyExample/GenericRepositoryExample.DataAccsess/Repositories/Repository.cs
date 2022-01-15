@@ -60,5 +60,12 @@ namespace GenericRepositoryExample.DataAccsess
         {
             return await Context.Set<TEntity>().SingleOrDefaultAsync(predicate);
         }
+       
+
+        public void Update(TEntity entity)
+        {
+            Context.Set<TEntity>().Update(entity);
+
+        }
     }
 }

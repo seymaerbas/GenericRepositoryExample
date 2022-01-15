@@ -32,6 +32,10 @@
     
     
     <PackageReference Include="NSwag.AspNetCore" Version="13.15.1" />
+   
+    
+    
+    <PackageReference Include="System.Linq.Dynamic.Core" Version="1.2.13" />
   </ItemGroup>
 
   <ItemGroup>
